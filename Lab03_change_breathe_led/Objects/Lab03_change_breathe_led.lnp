@@ -1,0 +1,7 @@
+--cpu Cortex-M3
+".\objects\simple_startup.o"
+".\objects\main.o"
+--strict --scatter ".\ARMCM3_ac6.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\Lab03_change_breathe_led.map" -o .\Objects\Lab03_change_breathe_led.axf
