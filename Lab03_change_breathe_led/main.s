@@ -61,7 +61,7 @@ butt_check
 	; read data from A00 and A01
 	LDR		R2,[R3,#0x08]	
 	
-	MOV32	R9,#198				; to use the perlintable when breathe butt is pressed
+	MOV32	R9,#199				; to use the perlintable when breathe butt is pressed
 	LDR		R8,=PerlinTable
 	AND		R4,R2,#0x02			; R4 = breathe button
 	CMP		R4,#0x02
@@ -180,7 +180,7 @@ breathe
 	; impliment breathe til breathe is release
 	LDR		R5,[R8]
 	MOV32	R6,#0x0000C350		; 50000
-	SUBS	R6,R6,R5			; R6 = 500000 - R5
+	SUBS 	R6,R6,R5			; R6 = 500000 - R5
 	
 	BL   	LED_On
 	MOV  	R0,R5 				; H
@@ -189,15 +189,22 @@ breathe
 	MOV  	R0,R6 				; L
 	BL   	Delay
 	
-	ADD 	R8,R8,#8
+	ADD 	R8,R8,#4
 	SUBS	R9,R9,#1
-	BEQ		butt_check			; at the end of the Perlintable, turn back to buttcheck to restart the table index
+	BEQ		exit_breathe			; at the end of the Perlintable, turn back to buttcheck to restart the table index
 	
 	; checking if breate button is still being push
 	LDR		R2,[R3,#0x08]
     AND		R4,R2,#0x02			; R4 = breathe button
 	CMP		R4,#0x02
 	BNE		breathe
+	
+	B		exit_breathe
+	
+exit_breathe
+	MOV32	R5,#1500000			; 150ms
+	MOV32	R6,#3500000			; 350ms
+	B		butt_check
 	
 ; 256 points with values from 100 to 9900      
 PerlinTable
