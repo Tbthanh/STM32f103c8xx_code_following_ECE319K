@@ -1,9 +1,0 @@
-LED toggle at 2 Hz  with varying duty-cycle
-High+Low equals 500ms
-
-/*
-*Lab 3, Spring 2023, EID1=213731, EID2=213731
-*Implement the Change switch using PE0Implement the Breathe switch using PE2
-*Implement the LED on PE5
-*/
-
