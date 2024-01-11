@@ -1,0 +1,52 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : Tran Ba Thanh
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+#include <stdint.h>
+
+#include <stdint.h>
+// #include "PLL.h"
+// #include "SysTick.h"
+
+// portB registers
+#define GPIO_B_BASE			(0x40010C00)
+
+// portA registers
+#define GPIO_A_BASE			(0x40010800)
+
+//  RCC clock registers
+#define RCC_BASE			(0x40021000)
+#define RCC_APB2ENR         (RCC_BASE + 0x18)
+
+// states
+#define jSo		0
+#define wSo		1
+#define rSo		2
+#define	jWe		3
+#define wWe		4
+#define rWe		5
+#define jWa		6
+#define wWa		7
+#define rWa		8
+#define rAl		9
+
+
+int main(void)
+{
+    /* Loop forever */
+	for(;;);
+}

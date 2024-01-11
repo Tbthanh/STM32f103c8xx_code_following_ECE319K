@@ -1,0 +1,94 @@
+/**
+ ******************************************************************************
+ * @file           : main.c
+ * @author         : Tran Ba Thanh
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
+
+#include <stdint.h>
+
+#include <stdint.h>
+// #include "PLL.h"
+// #include "SysTick.h"
+
+// portB registers
+#define GPIO_B_BASE			(0x40010C00)
+#define GPIO_B_CRL			(GPIO_B_BASE + 0x00)
+#define GPIO_B_CRH			(GPIO_B_BASE + 0x04)
+//#define GPIO_B_IDR			(GPIO_B_BASE + 0x08)
+#define GPIO_B_ODR			(GPIO_B_BASE + 0x0C)
+
+// portA registers
+#define GPIO_A_BASE			(0x40010800)
+#define GPIO_A_CRL			(GPIO_A_BASE + 0x00)
+#define GPIO_A_IDR			(GPIO_A_BASE + 0x08)
+#define GPIO_A_ODR			(GPIO_A_BASE + 0x0C)
+
+//  RCC clock registers
+#define RCC_BASE			(0x40021000)
+#define RCC_APB2ENR         (RCC_BASE + 0x18)
+
+// states
+#define jSo		0
+#define wSo		1
+#define rSo		2
+#define	jWe		3
+#define wWe		4
+#define rWe		5
+#define jWa		6
+#define wWa		7
+#define rWa		8
+#define rAl		9
+
+// state Structure
+struct State
+{
+	uint32_t OutB;		// 6-bit output for port B
+	uint32_t OutA;		// 3-bit output for port A, 1 output will be fake output to trigger a function
+	uint32_t Time;		// x10 ms
+	uint8_t Next[8];	// depends on 3-bit input
+};
+
+// Blink of walk need to look into more!!
+// FSM of states
+typedef const struct State STyp;
+STyp FSM[10]={
+	// jSo : just South
+	{0x0C0,0x20,1000,{waitN,waitN,goN,waitN,waitN,waitN,waitN,waitN}},
+	// wSo :
+	{0x14,0x2,160,{waitSafetyN,waitSafetyN,waitSafetyE,waitSafetyN,walkN,walkN,walkN,walkN}},
+	// rSo :
+	{0x24,0x2,80,{goE,goE,goN,goE,walkN,walkN,walkN,walkN}},
+	// jWe :
+	{0x24,0xE,400,{walkWarningN,walkWarningN,walkWarningE,walkWarningN,walkN,walkN,walkN,walkN}},
+	// wWe :
+	{0x24,0xE,200,{goE,goE,goN,goE,walkN,walkN,walkN,walkN}},
+	// rWe :
+	{0x21,0x2,400,{waitE,goE,waitE,waitE,waitE,waitE,waitE,waitE}},
+	// jWa : just Walk
+	{0x22,0x2,160,{waitSafetyE,waitSafetyN,waitSafetyE,waitSafetyE,walkE,walkE,walkE,walkE}},
+	// wWa : wait Walk
+	{0x24,0x2,80,{goN,goE,goN,goN,walkE,walkE,walkE,walkE}},
+	// rWa : red Walk
+	{0x24,0xE,400,{walkWarningE,walkWarningN,walkWarningE,walkWarningE,walkE,walkE,walkE,walkE}},
+	// rAl : red All
+	{0x24,0xE,200,{goN,goE,goN,goN,walkN,walkN,walkN,walkN}}
+};
+
+
+int main(void)
+{
+    /* Loop forever */
+	for(;;);
+}

@@ -1,0 +1,48 @@
+!SESSION 2024-01-08 13:37:26.533 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-08 13:37:40.244
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-08 13:37:40.259
+!MESSAGE Log4j2 initialized with config file D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-08 13:37:56.215
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-08 13:39:45.611
+!MESSAGE Indexed 'Lab5_Traficlight' (3 sources, 53 headers) in 3.94 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+!SESSION 2024-01-08 13:41:33.683 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-08 13:41:44.647
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-08 13:41:44.652
+!MESSAGE Log4j2 initialized with config file D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-08 13:41:56.925
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-01-10 22:54:11.509 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-10 22:55:15.526
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-10 22:55:15.547
+!MESSAGE Log4j2 initialized with config file D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-10 22:55:44.768
+!MESSAGE Started RMI Server, listening on port 41337
