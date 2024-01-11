@@ -1,9 +1,17 @@
-10:26:40 **** Clean-only build of configuration Debug for project Lab5_Traficlight ****
-make -j8 clean 
-rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
-rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf Lab5_Traficlight.elf Lab5_Traficlight.list Lab5_Traficlight.map default.size.stdout
+20:28:07 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1064	    104	   1568	   2736	    ab0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
  
 
-10:26:40 Build Finished. 0 errors, 0 warnings. (took 356ms)
+20:28:08 Build Finished. 0 errors, 0 warnings. (took 795ms)
 

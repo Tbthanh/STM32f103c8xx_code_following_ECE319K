@@ -46,29 +46,12 @@
  *
  *For more info, please visit: https://github.com/Tbthanh/STM32f103c8xx_code_following_ECE319K
  *FSM and the excel sheet can be found: STM32f103c8xx_code_following_ECE319K/lab05_trafic_light/00_Others/
- *
- */
+**/
 
 #include <stdint.h>
 #include "PLL.h"
 #include "SysTick.h"
-
-// portB registers
-#define GPIO_B_BASE			((volatile uint32_t *)(0x40010C00))
-#define GPIO_B_CRL			((volatile uint32_t *)(GPIO_B_BASE + 0x00))
-#define GPIO_B_CRH			((volatile uint32_t *)(GPIO_B_BASE + 0x04))
-//#define GPIO_B_IDR			((volatile uint32_t *)(GPIO_B_BASE + 0x08))
-#define GPIO_B_ODR			((volatile uint32_t *)(GPIO_B_BASE + 0x0C))
-
-// portA registers
-#define GPIO_A_BASE			((volatile uint32_t *)(0x40010800))
-#define GPIO_A_CRL			((volatile uint32_t *)(GPIO_A_BASE + 0x00))
-#define GPIO_A_IDR			((volatile uint32_t *)(GPIO_A_BASE + 0x08))
-#define GPIO_A_ODR			((volatile uint32_t *)(GPIO_A_BASE + 0x0C))
-
-//  RCC clock registers
-#define RCC_BASE			((volatile uint32_t *)(0x40021000))
-#define RCC_APB2ENR         ((volatile uint32_t *)(RCC_BASE + 0x18))
+#include "Register.h"
 
 // states
 #define jSo		0
@@ -126,9 +109,9 @@ STyp FSM[10]={
 void portB_Init(void)
 {
 	// CRL for pin B 4-7 and 0-1
-	*GPIO_B_CRL |= 0x11110011;
+	*(GPIOB->CRL) |= 0x11110011;
 	// CLH for pin B 8-9
-	*GPIO_B_CRH |= 0x00000011;
+	*(GPIOB->CRH) |= 0x00000011;
 	// Optional for clearing / setting the LED
 }
 
@@ -136,9 +119,9 @@ void portB_Init(void)
 void portA_Init(void)
 {
 	// CRL for pin A 0-2
-	*GPIO_A_CRL |= (uint32_t)0x00000088;
+	*(GPIOA->CRL) |= (uint32_t)0x00000088;
 	// Pull up pin A 0-2
-	*GPIO_A_ODR |= (uint32_t)0x00000003;
+	*(GPIOA->ODR) |= (uint32_t)0x00000003;
 }
 
 // function for flashing walking light 4 times B0-1
@@ -148,11 +131,11 @@ void flashing(uint32_t time)
 	int8_t count = 5;
 	while(count--)
 	{
-		*GPIO_B_ODR |= 0x03;		// ensure the led on
-		*GPIO_B_ODR &= 0xFFFFFFFE;	// turn off white
+		*(GPIOB->ODR) |= 0x03;		// ensure the led on
+		*(GPIOB->ODR) &= 0xFFFFFFFE;	// turn off white
 		//SysTick_Wait10ms(time);		// delay
-		*GPIO_B_ODR |= 0x03;		// ensure the led on
-		*GPIO_B_ODR &= 0xFFFFFFFD;	// turn off red
+		*(GPIOB->ODR) |= 0x03;		// ensure the led on
+		*(GPIOB->ODR) &= 0xFFFFFFFD;	// turn off red
 		//SysTick_Wait10ms(time);		//delay
 	}
 }
@@ -163,10 +146,10 @@ int main(void)
 	//PLL_Init(Bus80MHz);
 
 	// Enable RCC for GPIO
-	*RCC_APB2ENR |= 0x0C;
+	*(RCC->APB2ENR) |= 0x0C;
 
 	// Give time to stabilize the clock
-	while(0 == (*RCC_APB2ENR & 0x0C)){}
+	while(0 == (*(RCC->APB2ENR) & 0x0C)){}
 
 	// Initialize GPIOs
 	portA_Init();
@@ -182,7 +165,7 @@ int main(void)
 	for(;;)
 	{
 		// set the output to the current state
-		*GPIO_B_ODR = FSM[state].Output;
+		*GPIOB->ODR = FSM[state].Output;
 
 		// check if wWa
 		if (state == wWa)
@@ -197,7 +180,7 @@ int main(void)
 		}
 
 		// get new input
-		input = *GPIO_A_IDR;
+		input = *(GPIOA->IDR);
 		//input = (*GPIO_A_IDR & 0x07);
 
 		// go to next state

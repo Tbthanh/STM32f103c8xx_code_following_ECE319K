@@ -1,6 +1,492 @@
-10:26:40 **** Clean-only build of configuration Debug for project Lab5_Traficlight ****
-make -j8 clean 
-rm -rf ./Startup/startup_stm32f103c8tx.d ./Startup/startup_stm32f103c8tx.o
-rm -rf ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
-rm -rf Lab5_Traficlight.elf Lab5_Traficlight.list Lab5_Traficlight.map default.size.stdout
+20:14:17 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:26: warning: "RCC_CR" redefined
+   26 | #define RCC_CR                          ((uint32_t *)(0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:27: warning: "RCC_CFGR" redefined
+   27 | #define RCC_CFGR                        ((uint32_t *)(0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:52:34: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   52 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                  ^
+../Inc/Register.h:52:66: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   52 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                                                  ^
+../Inc/Register.h:53:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                          ^
+../Inc/Register.h:53:90: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                                                          ^
+../Inc/Register.h:54:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                          ^
+../Inc/Register.h:54:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                                                  ^
+../Inc/Register.h:55:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                          ^
+../Inc/Register.h:55:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                                                  ^
+../Inc/Register.h:56:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                          ^
+../Inc/Register.h:56:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                                                  ^
+../Inc/Register.h:70:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   70 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:70:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   70 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:71:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:71:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:72:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:72:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:73:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   73 |                                                         GPIO_A_BASE + GPIOx_LCKR};
+      |                                                                     ^
+../Inc/Register.h:87:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   87 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:87:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   87 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:88:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:88:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:89:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:89:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:90:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   90 |                                                         GPIO_B_BASE + GPIOx_LCKR};
+      |                                                                     ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:15:48 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:27: warning: "RCC_CR" redefined
+   27 | #define RCC_CR                          ((uint32_t *)(RCC_BASE +0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:28: warning: "RCC_CFGR" redefined
+   28 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE +0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:53:34: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                  ^
+../Inc/Register.h:53:66: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                                                  ^
+../Inc/Register.h:54:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                          ^
+../Inc/Register.h:54:90: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                                                          ^
+../Inc/Register.h:55:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                          ^
+../Inc/Register.h:55:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                                                  ^
+../Inc/Register.h:56:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                          ^
+../Inc/Register.h:56:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                                                  ^
+../Inc/Register.h:57:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   57 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                          ^
+../Inc/Register.h:57:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   57 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                                                  ^
+../Inc/Register.h:71:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:71:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:72:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:72:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:73:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   73 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:73:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   73 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:74:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   74 |                                                         GPIO_A_BASE + GPIOx_LCKR};
+      |                                                                     ^
+../Inc/Register.h:88:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:88:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:89:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:89:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:90:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   90 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:90:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   90 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:91:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   91 |                                                         GPIO_B_BASE + GPIOx_LCKR};
+      |                                                                     ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:18:55 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:27: warning: "RCC_CR" redefined
+   27 | #define RCC_CR                          ((uint32_t *)(RCC_BASE +0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:28: warning: "RCC_CFGR" redefined
+   28 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE +0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:53:34: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                  ^
+../Inc/Register.h:53:66: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   53 | RCC_struct RCC_ADDR = { RCC_BASE + RCC_CR,              RCC_BASE + RCC_CFGR,
+      |                                                                  ^
+../Inc/Register.h:54:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                          ^
+../Inc/Register.h:54:90: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   54 |                                                 RCC_BASE + RCC_CIR,             RCC_BASE + RCC_APB2RSTR,
+      |                                                                                          ^
+../Inc/Register.h:55:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                          ^
+../Inc/Register.h:55:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   55 |                                                 RCC_BASE + RCC_APB1RSTR,RCC_BASE + RCC_AHBENR,
+      |                                                                                  ^
+../Inc/Register.h:56:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                          ^
+../Inc/Register.h:56:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   56 |                                                 RCC_BASE + RCC_APB2ENR, RCC_BASE + RCC_APB1ENR,
+      |                                                                                  ^
+../Inc/Register.h:57:58: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   57 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                          ^
+../Inc/Register.h:57:82: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   57 |                                                 RCC_BASE + RCC_BDCR,    RCC_BASE + RCC_CSR};
+      |                                                                                  ^
+../Inc/Register.h:71:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:71:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   71 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:72:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:72:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   72 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:73:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   73 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:73:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   73 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:74:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   74 |                                                         GPIO_A_BASE + GPIOx_LCKR};
+      |                                                                     ^
+../Inc/Register.h:88:45: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                             ^
+../Inc/Register.h:88:77: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   88 | GPIOB_struct GPIOB_ADDR = {     GPIO_B_BASE + GPIOx_CRL,        GPIO_B_BASE + GPIOx_CRH,
+      |                                                                             ^
+../Inc/Register.h:89:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                     ^
+../Inc/Register.h:89:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   89 |                                                         GPIO_B_BASE + GPIOx_IDR,        GPIO_B_BASE + GPIOx_ODR,
+      |                                                                                                     ^
+../Inc/Register.h:90:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   90 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                     ^
+../Inc/Register.h:90:101: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   90 |                                                         GPIO_B_BASE + GPIOx_BSRR,       GPIO_B_BASE + GPIOx_BRR,
+      |                                                                                                     ^
+../Inc/Register.h:91:69: error: invalid operands to binary + (have 'uint32_t *' {aka 'long unsigned int *'} and 'uint32_t *' {aka 'long unsigned int *'})
+   91 |                                                         GPIO_B_BASE + GPIOx_LCKR};
+      |                                                                     ^
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:21:38 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:34: warning: "RCC_CR" redefined
+   34 | #define RCC_CR                          ((uint32_t *)(RCC_BASE + 0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:35: warning: "RCC_CFGR" redefined
+   35 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE + 0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:75:47: error: 'GPIOx_CRL' undeclared here (not in a function); did you mean 'GPIOB_CRL'?
+   75 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                               ^~~~~~~~~
+      |                                               GPIOB_CRL
+../Inc/Register.h:75:79: error: 'GPIOx_CRH' undeclared here (not in a function); did you mean 'GPIOB_CRH'?
+   75 | GPIOA_struct GPIOA_ADDR = {     GPIO_A_BASE + GPIOx_CRL,        GPIO_A_BASE + GPIOx_CRH,
+      |                                                                               ^~~~~~~~~
+      |                                                                               GPIOB_CRH
+../Inc/Register.h:76:71: error: 'GPIOx_IDR' undeclared here (not in a function); did you mean 'GPIOB_IDR'?
+   76 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                       ^~~~~~~~~
+      |                                                                       GPIOB_IDR
+../Inc/Register.h:76:103: error: 'GPIOx_ODR' undeclared here (not in a function); did you mean 'GPIOB_ODR'?
+   76 |                                                         GPIO_A_BASE + GPIOx_IDR,        GPIO_A_BASE + GPIOx_ODR,
+      |                                                                                                       ^~~~~~~~~
+      |                                                                                                       GPIOB_ODR
+../Inc/Register.h:77:71: error: 'GPIOx_BSRR' undeclared here (not in a function); did you mean 'GPIOA_BSRR'?
+   77 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                       ^~~~~~~~~~
+      |                                                                       GPIOA_BSRR
+../Inc/Register.h:77:103: error: 'GPIOx_BRR' undeclared here (not in a function); did you mean 'GPIOB_BRR'?
+   77 |                                                         GPIO_A_BASE + GPIOx_BSRR,       GPIO_A_BASE + GPIOx_BRR,
+      |                                                                                                       ^~~~~~~~~
+      |                                                                                                       GPIOB_BRR
+../Inc/Register.h:78:71: error: 'GPIOx_LCKR' undeclared here (not in a function); did you mean 'GPIOA_LCKR'?
+   78 |                                                         GPIO_A_BASE + GPIOx_LCKR};
+      |                                                                       ^~~~~~~~~~
+      |                                                                       GPIOA_LCKR
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+20:25:06 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:34: warning: "RCC_CR" redefined
+   34 | #define RCC_CR                          ((uint32_t *)(RCC_BASE + 0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:35: warning: "RCC_CFGR" redefined
+   35 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE + 0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1104	    116	   1564	   2784	    ae0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+20:25:24 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:34: warning: "RCC_CR" redefined
+   34 | #define RCC_CR                          ((uint32_t *)(RCC_BASE + 0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:35: warning: "RCC_CFGR" redefined
+   35 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE + 0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1104	    116	   1564	   2784	    ae0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+20:27:03 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:54:
+../Inc/Register.h:14: warning: "RCC_BASE" redefined
+   14 | #define RCC_BASE                        ((uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:12: note: this is the location of the previous definition
+   12 | #define RCC_BASE        ((volatile uint32_t *)(0x40021000))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:34: warning: "RCC_CR" redefined
+   34 | #define RCC_CR                          ((uint32_t *)(RCC_BASE + 0x00))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:13: note: this is the location of the previous definition
+   13 | #define RCC_CR          ((volatile uint32_t *)(RCC_BASE + 0X00))
+      | 
+In file included from ../Src/main.c:54:
+../Inc/Register.h:35: warning: "RCC_CFGR" redefined
+   35 | #define RCC_CFGR                        ((uint32_t *)(RCC_BASE + 0x04))
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:14: note: this is the location of the previous definition
+   14 | #define RCC_CFGR        ((volatile uint32_t *)(RCC_BASE + 0X04))
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1064	    104	   1568	   2736	    ab0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+20:28:07 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1064	    104	   1568	   2736	    ab0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
  
