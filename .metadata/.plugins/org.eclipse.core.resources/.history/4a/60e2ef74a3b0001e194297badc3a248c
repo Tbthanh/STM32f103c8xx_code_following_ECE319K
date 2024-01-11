@@ -142,8 +142,8 @@ void flashing(uint32_t time)
 
 int main(void)
 {
-	// initialize 48 MHz system clock
-	SystemInit();
+	// initialize 72 MHz system clock
+	//PLL_Init(Bus80MHz);
 
 	// Enable RCC for GPIO
 	*(RCC->APB2ENR) |= 0x0C;

@@ -490,3 +490,122 @@ Finished building: default.size.stdout
  
 Finished building: Lab5_Traficlight.list
  
+23:25:41 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:45:8: error: no macro name given in #define directive
+   45 | #define
+      |        ^
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SetSysClock':
+../Inc/PLL.h:84:42: warning: bitwise comparison always evaluates to true [-Wtautological-compare]
+   84 |         if ((*(RCC->CR) & RCC_CR_HSERDY) != RCC_CR_RESET)
+      |                                          ^~
+../Inc/PLL.h:118:37: error: 'RCC_CR_PLLRDY' undeclared (first use in this function); did you mean 'RCC_CR_HSERDY'?
+  118 |                 while((*(RCC->CR) & RCC_CR_PLLRDY) == 0)
+      |                                     ^~~~~~~~~~~~~
+      |                                     RCC_CR_HSERDY
+../Inc/PLL.h:118:37: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:123:53: error: 'RCC_CFGR_SW' undeclared (first use in this function); did you mean 'RCC_CFGR'?
+  123 |                 RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+      |                                                     ^~~~~~~~~~~
+      |                                                     RCC_CFGR
+../Inc/PLL.h:124:40: error: 'RCC_CFGR_SW_PLL' undeclared (first use in this function)
+  124 |                 RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
+      |                                        ^~~~~~~~~~~~~~~
+../Inc/PLL.h:127:47: error: 'RCC_CFGR_SWS' undeclared (first use in this function); did you mean 'RCC_CFGR'?
+  127 |                 while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+      |                                               ^~~~~~~~~~~~
+      |                                               RCC_CFGR
+../Inc/PLL.h:127:74: error: 'RCC_CFGR_SWS_PLL' undeclared (first use in this function)
+  127 |                 while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+      |                                                                          ^~~~~~~~~~~~~~~~
+At top level:
+../Inc/PLL.h:65:13: warning: 'SetSysClock' defined but not used [-Wunused-function]
+   65 | static void SetSysClock(void)
+      |             ^~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:30:50 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SetSysClock':
+../Inc/PLL.h:123:53: error: 'RCC_CFGR_SW' undeclared (first use in this function); did you mean 'RCC_CFGR'?
+  123 |                 RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+      |                                                     ^~~~~~~~~~~
+      |                                                     RCC_CFGR
+../Inc/PLL.h:123:53: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:124:40: error: 'RCC_CFGR_SW_PLL' undeclared (first use in this function)
+  124 |                 RCC->CFGR |= (uint32_t)RCC_CFGR_SW_PLL;
+      |                                        ^~~~~~~~~~~~~~~
+../Inc/PLL.h:127:47: error: 'RCC_CFGR_SWS' undeclared (first use in this function); did you mean 'RCC_CFGR'?
+  127 |                 while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+      |                                               ^~~~~~~~~~~~
+      |                                               RCC_CFGR
+../Inc/PLL.h:127:74: error: 'RCC_CFGR_SWS_PLL' undeclared (first use in this function)
+  127 |                 while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS) != (uint32_t)RCC_CFGR_SWS_PLL)
+      |                                                                          ^~~~~~~~~~~~~~~~
+At top level:
+../Inc/PLL.h:65:13: warning: 'SetSysClock' defined but not used [-Wunused-function]
+   65 | static void SetSysClock(void)
+      |             ^~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:37:37 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:65:13: warning: 'SetSysClock' defined but not used [-Wunused-function]
+   65 | static void SetSysClock(void)
+      |             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1064	    104	   1568	   2736	    ab0	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+00:01:35 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemInit':
+../Inc/PLL.h:87:9: warning: implicit declaration of function 'SetSysClock' [-Wimplicit-function-declaration]
+   87 |         SetSysClock();
+      |         ^~~~~~~~~~~
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: At top level:
+../Inc/PLL.h:99:13: warning: conflicting types for 'SetSysClock'; have 'void(void)'
+   99 | static void SetSysClock(void)
+      |             ^~~~~~~~~~~
+../Inc/PLL.h:99:13: error: static declaration of 'SetSysClock' follows non-static declaration
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:87:9: note: previous implicit declaration of 'SetSysClock' with type 'void(void)'
+   87 |         SetSysClock();
+      |         ^~~~~~~~~~~
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:99:13: warning: 'SetSysClock' defined but not used [-Wunused-function]
+   99 | static void SetSysClock(void)
+      |             ^~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+00:02:38 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1436	    104	   1568	   3108	    c24	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 

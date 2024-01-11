@@ -1,3 +1,5 @@
+../Inc/PLL.h:57:13:SetSysClock	7
+../Inc/PLL.h:138:6:SystemInit	1
 ../Src/main.c:109:6:portB_Init	1
 ../Src/main.c:119:6:portA_Init	1
 ../Src/main.c:128:6:flashing	2
