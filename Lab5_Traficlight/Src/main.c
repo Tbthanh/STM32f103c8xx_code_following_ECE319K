@@ -133,10 +133,10 @@ void flashing(uint32_t time)
 	{
 		*(GPIOB->ODR) |= 0x03;		// ensure the led on
 		*(GPIOB->ODR) &= 0xFFFFFFFE;	// turn off white
-		//SysTick_Wait10ms(time);		// delay
+		delay(time);
 		*(GPIOB->ODR) |= 0x03;		// ensure the led on
 		*(GPIOB->ODR) &= 0xFFFFFFFD;	// turn off red
-		//SysTick_Wait10ms(time);		//delay
+		delay(time);
 	}
 }
 
@@ -176,7 +176,7 @@ int main(void)
 		else
 		{
 			// delay 10ms * FSM[state].Time
-			//SysTick_Wait10ms(FSM[n].Time);
+			delay(FSM[state].Time);
 		}
 
 		// get new input

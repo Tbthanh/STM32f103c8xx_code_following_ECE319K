@@ -41,6 +41,9 @@
 #define RCC_APB1ENR         ((uint32_t *)(RCC_BASE + 0x1C))
 #define RCC_BDCR			((uint32_t *)(RCC_BASE + 0x20))
 #define RCC_CSR				((uint32_t *)(RCC_BASE + 0x24))
+#define RCC_AHPRSTR			((uint32_t *)(RCC_BASE + 0x28))
+#define RCC_CFGR2			((uint32_t *)(RCC_BASE + 0x2C))
+
 
 // RCC structure
 typedef struct
@@ -55,10 +58,13 @@ typedef struct
 	volatile uint32_t *APB1ENR;
 	volatile uint32_t *BDCR;
 	volatile uint32_t *CSR;
+	volatile uint32_t *AHPRSTR;
+	volatile uint32_t *CFGR2;
 }RCC_struct;
 // attach the address to each pointer according to name
 RCC_struct RCC_ADDR = {	RCC_CR,RCC_CFGR,RCC_CIR,RCC_APB2RSTR,RCC_APB1RSTR,
-						RCC_AHBENR,RCC_APB2ENR,RCC_APB1ENR,RCC_BDCR,RCC_CSR};
+						RCC_AHBENR,RCC_APB2ENR,RCC_APB1ENR,RCC_BDCR,RCC_CSR,
+						RCC_AHPRSTR,RCC_CFGR2};
 // Make the actual pointer that get used in the main.c
 RCC_struct * const RCC = &RCC_ADDR;
 

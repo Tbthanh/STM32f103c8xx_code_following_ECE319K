@@ -37,6 +37,9 @@
 
 #include "Register.h"
 
+uint32_t SystemCoreClock    = 48000000;
+uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+
 #define RCC_CR_HSEON 	0x00010000
 #define RCC_CR_HSERDY	0x00020083
 #define RCC_CR_RESET	0x00000083	// NOT SURE!!
@@ -44,6 +47,118 @@
 #define RCC_CFGR_PPRE_DIV1	0x0400	// PPRE2[13:11] 0xx PPRE1[10:8] 0xx
 #define RCC_CR_PLLRDY 	0x02000083	// NOT SURE!!
 #define HSE_STARTUP_TIMEOUT   ((uint16_t)0x5000) /*!< Time out for HSE start up */
+#define RCC_CFGR_SWS	0x0000000C
+#define HSI_VALUE  ((uint32_t)8000000) /*!< Value of the Internal High Speed oscillator in Hz.
+                                             The real value may vary depending on the variations
+                                             in voltage and temperature.  */
+#define HSE_VALUE    ((uint32_t)8000000) /*!< Value of the External oscillator in Hz*/
+
+/* PLLMUL configuration */
+// Ref: RM0008 7.3.2
+#define  RCC_CFGR_PLLMUL                    ((uint32_t)0x003C0000)        /*!< PLLMUL[3:0] bits (PLL multiplication factor) */
+#define  RCC_CFGR_PLLMUL_0                  ((uint32_t)0x00040000)        /*!< Bit 0 */
+#define  RCC_CFGR_PLLMUL_1                  ((uint32_t)0x00080000)        /*!< Bit 1 */
+#define  RCC_CFGR_PLLMUL_2                  ((uint32_t)0x00100000)        /*!< Bit 2 */
+#define  RCC_CFGR_PLLMUL_3                  ((uint32_t)0x00200000)        /*!< Bit 3 */
+
+#define  RCC_CFGR_PLLMUL2                   ((uint32_t)0x00000000)        /*!< PLL input clock*2 */
+#define  RCC_CFGR_PLLMUL3                   ((uint32_t)0x00040000)        /*!< PLL input clock*3 */
+#define  RCC_CFGR_PLLMUL4                   ((uint32_t)0x00080000)        /*!< PLL input clock*4 */
+#define  RCC_CFGR_PLLMUL5                   ((uint32_t)0x000C0000)        /*!< PLL input clock*5 */
+#define  RCC_CFGR_PLLMUL6                   ((uint32_t)0x00100000)        /*!< PLL input clock*6 */
+#define  RCC_CFGR_PLLMUL7                   ((uint32_t)0x00140000)        /*!< PLL input clock*7 */
+#define  RCC_CFGR_PLLMUL8                   ((uint32_t)0x00180000)        /*!< PLL input clock*8 */
+#define  RCC_CFGR_PLLMUL9                   ((uint32_t)0x001C0000)        /*!< PLL input clock*9 */
+#define  RCC_CFGR_PLLMUL10                  ((uint32_t)0x00200000)        /*!< PLL input clock10 */
+#define  RCC_CFGR_PLLMUL11                  ((uint32_t)0x00240000)        /*!< PLL input clock*11 */
+#define  RCC_CFGR_PLLMUL12                  ((uint32_t)0x00280000)        /*!< PLL input clock*12 */
+#define  RCC_CFGR_PLLMUL13                  ((uint32_t)0x002C0000)        /*!< PLL input clock*13 */
+#define  RCC_CFGR_PLLMUL14                  ((uint32_t)0x00300000)        /*!< PLL input clock*14 */
+#define  RCC_CFGR_PLLMUL15                  ((uint32_t)0x00340000)        /*!< PLL input clock*15 */
+#define  RCC_CFGR_PLLMUL16                  ((uint32_t)0x00380000)        /*!< PLL input clock*16 */
+
+/* Old PLLMUL configuration bit definition maintained for legacy purposes */
+#define  RCC_CFGR_PLLMULL                    RCC_CFGR_PLLMUL        /*!< PLLMUL[3:0] bits (PLL multiplication factor) */
+#define  RCC_CFGR_PLLMULL_0                  RCC_CFGR_PLLMUL_0        /*!< Bit 0 */
+#define  RCC_CFGR_PLLMULL_1                  RCC_CFGR_PLLMUL_1        /*!< Bit 1 */
+#define  RCC_CFGR_PLLMULL_2                  RCC_CFGR_PLLMUL_2        /*!< Bit 2 */
+#define  RCC_CFGR_PLLMULL_3                  RCC_CFGR_PLLMUL_3       /*!< Bit 3 */
+
+#define  RCC_CFGR_PLLMULL2                   RCC_CFGR_PLLMUL2       /*!< PLL input clock*2 */
+#define  RCC_CFGR_PLLMULL3                   RCC_CFGR_PLLMUL3        /*!< PLL input clock*3 */
+#define  RCC_CFGR_PLLMULL4                   RCC_CFGR_PLLMUL4        /*!< PLL input clock*4 */
+#define  RCC_CFGR_PLLMULL5                   RCC_CFGR_PLLMUL5        /*!< PLL input clock*5 */
+#define  RCC_CFGR_PLLMULL6                   RCC_CFGR_PLLMUL6        /*!< PLL input clock*6 */
+#define  RCC_CFGR_PLLMULL7                   RCC_CFGR_PLLMUL7        /*!< PLL input clock*7 */
+#define  RCC_CFGR_PLLMULL8                   RCC_CFGR_PLLMUL8        /*!< PLL input clock*8 */
+#define  RCC_CFGR_PLLMULL9                   RCC_CFGR_PLLMUL9        /*!< PLL input clock*9 */
+#define  RCC_CFGR_PLLMULL10                  RCC_CFGR_PLLMUL10        /*!< PLL input clock10 */
+#define  RCC_CFGR_PLLMULL11                  RCC_CFGR_PLLMUL11        /*!< PLL input clock*11 */
+#define  RCC_CFGR_PLLMULL12                  RCC_CFGR_PLLMUL12        /*!< PLL input clock*12 */
+#define  RCC_CFGR_PLLMULL13                  RCC_CFGR_PLLMUL13        /*!< PLL input clock*13 */
+#define  RCC_CFGR_PLLMULL14                  RCC_CFGR_PLLMUL14        /*!< PLL input clock*14 */
+#define  RCC_CFGR_PLLMULL15                  RCC_CFGR_PLLMUL15        /*!< PLL input clock*15 */
+#define  RCC_CFGR_PLLMULL16                  RCC_CFGR_PLLMUL16        /*!< PLL input clock*16 */
+
+#define  RCC_CFGR_PLLSRC                     ((uint32_t)0x00018000)        /*!< PLL entry clock source */
+#define  RCC_CFGR_PLLSRC_0                   ((uint32_t)0x00008000)        /*!< Bit 0 (available only in the STM32F072 devices) */
+#define  RCC_CFGR_PLLSRC_1                   ((uint32_t)0x00010000)        /*!< Bit 1 */
+
+#define  RCC_CFGR_PLLSRC_PREDIV1             ((uint32_t)0x00010000)        /*!< PREDIV1 clock selected as PLL entry clock source;
+                                                                                Old PREDIV1 bit definition, maintained for legacy purpose */
+#define  RCC_CFGR_PLLSRC_HSI_DIV2            ((uint32_t)0x00000000)        /*!< HSI clock divided by 2 selected as PLL entry clock source */
+#define  RCC_CFGR_PLLSRC_HSI_PREDIV          ((uint32_t)0x00008000)        /*!< HSI PREDIV clock selected as PLL entry clock source
+                                                                                (This bit and configuration is only available for STM32F072 devices)*/
+#define  RCC_CFGR_PLLSRC_HSE_PREDIV          ((uint32_t)0x00010000)        /*!< HSE PREDIV clock selected as PLL entry clock source */
+#define  RCC_CFGR_PLLSRC_HSI48_PREDIV        ((uint32_t)0x00018000)        /*!< HSI48 PREDIV clock selected as PLL entry clock source */
+
+#define  RCC_CFGR_PLLXTPRE                   ((uint32_t)0x00020000)        /*!< HSE divider for PLL entry */
+#define  RCC_CFGR_PLLXTPRE_PREDIV1           ((uint32_t)0x00000000)        /*!< PREDIV1 clock not divided for PLL entry */
+#define  RCC_CFGR_PLLXTPRE_PREDIV1_Div2      ((uint32_t)0x00020000)        /*!< PREDIV1 clock divided by 2 for PLL entry */
+
+#define  RCC_CFGR_HPRE                       ((uint32_t)0x000000F0)        /*!< HPRE[3:0] bits (AHB prescaler) */
+#define  RCC_CFGR_HPRE_0                     ((uint32_t)0x00000010)        /*!< Bit 0 */
+#define  RCC_CFGR_HPRE_1                     ((uint32_t)0x00000020)        /*!< Bit 1 */
+#define  RCC_CFGR_HPRE_2                     ((uint32_t)0x00000040)        /*!< Bit 2 */
+#define  RCC_CFGR_HPRE_3                     ((uint32_t)0x00000080)        /*!< Bit 3 */
+/* HPRE configuration */
+#define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+#define  RCC_CFGR_HPRE_DIV2                  ((uint32_t)0x00000080)        /*!< SYSCLK divided by 2 */
+#define  RCC_CFGR_HPRE_DIV4                  ((uint32_t)0x00000090)        /*!< SYSCLK divided by 4 */
+#define  RCC_CFGR_HPRE_DIV8                  ((uint32_t)0x000000A0)        /*!< SYSCLK divided by 8 */
+#define  RCC_CFGR_HPRE_DIV16                 ((uint32_t)0x000000B0)        /*!< SYSCLK divided by 16 */
+#define  RCC_CFGR_HPRE_DIV64                 ((uint32_t)0x000000C0)        /*!< SYSCLK divided by 64 */
+#define  RCC_CFGR_HPRE_DIV128                ((uint32_t)0x000000D0)        /*!< SYSCLK divided by 128 */
+#define  RCC_CFGR_HPRE_DIV256                ((uint32_t)0x000000E0)        /*!< SYSCLK divided by 256 */
+#define  RCC_CFGR_HPRE_DIV512                ((uint32_t)0x000000F0)        /*!< SYSCLK divided by 512 */
+
+/*******************  Bit definition for RCC_CFGR2 register  ******************/
+/* PREDIV1 configuration */
+#define  RCC_CFGR2_PREDIV1                   ((uint32_t)0x0000000F)        /*!< PREDIV1[3:0] bits */
+#define  RCC_CFGR2_PREDIV1_0                 ((uint32_t)0x00000001)        /*!< Bit 0 */
+#define  RCC_CFGR2_PREDIV1_1                 ((uint32_t)0x00000002)        /*!< Bit 1 */
+#define  RCC_CFGR2_PREDIV1_2                 ((uint32_t)0x00000004)        /*!< Bit 2 */
+#define  RCC_CFGR2_PREDIV1_3                 ((uint32_t)0x00000008)        /*!< Bit 3 */
+
+#define  RCC_CFGR2_PREDIV1_DIV1              ((uint32_t)0x00000000)        /*!< PREDIV1 input clock not divided */
+#define  RCC_CFGR2_PREDIV1_DIV2              ((uint32_t)0x00000001)        /*!< PREDIV1 input clock divided by 2 */
+#define  RCC_CFGR2_PREDIV1_DIV3              ((uint32_t)0x00000002)        /*!< PREDIV1 input clock divided by 3 */
+#define  RCC_CFGR2_PREDIV1_DIV4              ((uint32_t)0x00000003)        /*!< PREDIV1 input clock divided by 4 */
+#define  RCC_CFGR2_PREDIV1_DIV5              ((uint32_t)0x00000004)        /*!< PREDIV1 input clock divided by 5 */
+#define  RCC_CFGR2_PREDIV1_DIV6              ((uint32_t)0x00000005)        /*!< PREDIV1 input clock divided by 6 */
+#define  RCC_CFGR2_PREDIV1_DIV7              ((uint32_t)0x00000006)        /*!< PREDIV1 input clock divided by 7 */
+#define  RCC_CFGR2_PREDIV1_DIV8              ((uint32_t)0x00000007)        /*!< PREDIV1 input clock divided by 8 */
+#define  RCC_CFGR2_PREDIV1_DIV9              ((uint32_t)0x00000008)        /*!< PREDIV1 input clock divided by 9 */
+#define  RCC_CFGR2_PREDIV1_DIV10             ((uint32_t)0x00000009)        /*!< PREDIV1 input clock divided by 10 */
+#define  RCC_CFGR2_PREDIV1_DIV11             ((uint32_t)0x0000000A)        /*!< PREDIV1 input clock divided by 11 */
+#define  RCC_CFGR2_PREDIV1_DIV12             ((uint32_t)0x0000000B)        /*!< PREDIV1 input clock divided by 12 */
+#define  RCC_CFGR2_PREDIV1_DIV13             ((uint32_t)0x0000000C)        /*!< PREDIV1 input clock divided by 13 */
+#define  RCC_CFGR2_PREDIV1_DIV14             ((uint32_t)0x0000000D)        /*!< PREDIV1 input clock divided by 14 */
+#define  RCC_CFGR2_PREDIV1_DIV15             ((uint32_t)0x0000000E)        /*!< PREDIV1 input clock divided by 15 */
+#define  RCC_CFGR2_PREDIV1_DIV16             ((uint32_t)0x0000000F)        /*!< PREDIV1 input clock divided by 16 */
+
+
+// FOR FUTURE USE: https://github.com/Seeed-Studio/MotorBridgeCapeFirmwareSourceCode/blob/b7a4295901a3fc8a72a412de30b4ec96ff6e82dd/STM32F0xx_StdPeriph_Lib_V1.5.0/Libraries/CMSIS/Device/ST/STM32F0xx/Include/stm32f0xx.h
 
 /**
   * @brief  Configures the System clock frequency, AHB/APBx prescalers and Flash
@@ -211,7 +326,7 @@ void SystemCoreClockUpdate (void)
   uint32_t tmp = 0, pllmull = 0, pllsource = 0, prediv1factor = 0;
 
   /* Get SYSCLK source -------------------------------------------------------*/
-  tmp = RCC->CFGR & RCC_CFGR_SWS;
+  tmp = *(RCC->CFGR) & RCC_CFGR_SWS;
 
   switch (tmp)
   {
@@ -223,8 +338,8 @@ void SystemCoreClockUpdate (void)
       break;
     case 0x08:  /* PLL used as system clock */
       /* Get PLL clock source and multiplication factor ----------------------*/
-      pllmull = RCC->CFGR & RCC_CFGR_PLLMULL;
-      pllsource = RCC->CFGR & RCC_CFGR_PLLSRC;
+      pllmull = *(RCC->CFGR) & RCC_CFGR_PLLMULL;
+      pllsource = *(RCC->CFGR) & RCC_CFGR_PLLSRC;
       pllmull = ( pllmull >> 18) + 2;
 
       if (pllsource == 0x00)
@@ -234,7 +349,7 @@ void SystemCoreClockUpdate (void)
       }
       else
       {
-        prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+        prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
         /* HSE oscillator clock selected as PREDIV1 clock entry */
         SystemCoreClock = (HSE_VALUE / prediv1factor) * pllmull;
       }
@@ -245,7 +360,7 @@ void SystemCoreClockUpdate (void)
   }
   /* Compute HCLK clock frequency ----------------*/
   /* Get HCLK prescaler */
-  tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+  tmp = AHBPrescTable[((*(RCC->CFGR) & RCC_CFGR_HPRE) >> 4)];
   /* HCLK clock frequency */
   SystemCoreClock >>= tmp;
 }

@@ -609,3 +609,517 @@ Finished building: default.size.stdout
  
 Finished building: Lab5_Traficlight.list
  
+14:27:08 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:270:7: error: 'SystemCoreClock' undeclared (first use in this function); did you mean 'SystemCoreClockUpdate'?
+  270 |       SystemCoreClock = HSI_VALUE;
+      |       ^~~~~~~~~~~~~~~
+      |       SystemCoreClockUpdate
+../Inc/PLL.h:270:7: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:278:34: error: 'RCC_CFGR_PLLSRC' undeclared (first use in this function); did you mean 'RCC_CFGR_PLLMUL'?
+  278 |       pllsource = *(RCC->CFGR) & RCC_CFGR_PLLSRC;
+      |                                  ^~~~~~~~~~~~~~~
+      |                                  RCC_CFGR_PLLMUL
+../Inc/PLL.h:288:31: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  288 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                               ^~~~~
+      |                               CFGR
+../Inc/PLL.h:288:39: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  288 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                                       ^~~~~~~~~~~~~~~~~
+      |                                       RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:299:9: error: 'AHBPrescTable' undeclared (first use in this function)
+  299 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+../Inc/PLL.h:299:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function); did you mean 'RCC_CFGR_SWS'?
+  299 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |                                     ^~~~~~~~~~~~~
+      |                                     RCC_CFGR_SWS
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:48:49 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:271:7: error: 'SystemCoreClock' undeclared (first use in this function); did you mean 'SystemCoreClockUpdate'?
+  271 |       SystemCoreClock = HSI_VALUE;
+      |       ^~~~~~~~~~~~~~~
+      |       SystemCoreClockUpdate
+../Inc/PLL.h:271:7: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:279:34: error: 'RCC_CFGR_PLLSRC' undeclared (first use in this function); did you mean 'RCC_CFGR_PLLMUL'?
+  279 |       pllsource = *(RCC->CFGR) & RCC_CFGR_PLLSRC;
+      |                                  ^~~~~~~~~~~~~~~
+      |                                  RCC_CFGR_PLLMUL
+../Inc/PLL.h:289:31: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  289 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                               ^~~~~
+      |                               CFGR
+../Inc/PLL.h:289:39: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  289 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                                       ^~~~~~~~~~~~~~~~~
+      |                                       RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:300:9: error: 'AHBPrescTable' undeclared (first use in this function)
+  300 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+../Inc/PLL.h:300:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function); did you mean 'RCC_CFGR_SWS'?
+  300 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |                                     ^~~~~~~~~~~~~
+      |                                     RCC_CFGR_SWS
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:57:33 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:282:34: error: 'RCC_CFGR_PLLSRC' undeclared (first use in this function); did you mean 'RCC_CFGR_PLLMUL'?
+  282 |       pllsource = *(RCC->CFGR) & RCC_CFGR_PLLSRC;
+      |                                  ^~~~~~~~~~~~~~~
+      |                                  RCC_CFGR_PLLMUL
+../Inc/PLL.h:282:34: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:292:31: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  292 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                               ^~~~~
+      |                               CFGR
+../Inc/PLL.h:292:39: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  292 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                                       ^~~~~~~~~~~~~~~~~
+      |                                       RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:303:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function); did you mean 'RCC_CFGR_SWS'?
+  303 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |                                     ^~~~~~~~~~~~~
+      |                                     RCC_CFGR_SWS
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+14:59:54 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:308:31: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  308 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                               ^~~~~
+      |                               CFGR
+../Inc/PLL.h:308:39: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  308 |         prediv1factor = (RCC->CFGR2 & RCC_CFGR2_PREDIV1) + 1;
+      |                                       ^~~~~~~~~~~~~~~~~
+      |                                       RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:308:39: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:319:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function); did you mean 'RCC_CFGR_SWS'?
+  319 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |                                     ^~~~~~~~~~~~~
+      |                                     RCC_CFGR_SWS
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:01:00 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:308:33: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  308 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                 ^~~~~
+      |                                 CFGR
+../Inc/PLL.h:308:42: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  308 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                          ^~~~~~~~~~~~~~~~~
+      |                                          RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:308:42: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/PLL.h:319:40: error: 'RCC_CFGR_HPRE' undeclared (first use in this function); did you mean 'RCC_CFGR_SWS'?
+  319 |   tmp = AHBPrescTable[((*(RCC->CFGR) & RCC_CFGR_HPRE) >> 4)];
+      |                                        ^~~~~~~~~~~~~
+      |                                        RCC_CFGR_SWS
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:02:11 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:312:33: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  312 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                 ^~~~~
+      |                                 CFGR
+../Inc/PLL.h:312:42: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  312 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                          ^~~~~~~~~~~~~~~~~
+      |                                          RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:312:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:03:10 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:326:33: error: 'RCC_struct' has no member named 'CFGR2'; did you mean 'CFGR'?
+  326 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                 ^~~~~
+      |                                 CFGR
+../Inc/PLL.h:326:42: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  326 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                          ^~~~~~~~~~~~~~~~~
+      |                                          RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:326:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:33:25 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h: In function 'SystemCoreClockUpdate':
+../Inc/PLL.h:326:42: error: 'RCC_CFGR2_PREDIV1' undeclared (first use in this function); did you mean 'RCC_CFGR_HPRE_DIV1'?
+  326 |         prediv1factor = (*(RCC->CFGR2) & RCC_CFGR2_PREDIV1) + 1;
+      |                                          ^~~~~~~~~~~~~~~~~
+      |                                          RCC_CFGR_HPRE_DIV1
+../Inc/PLL.h:326:42: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:36:13 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1436	    112	   1568	   3116	    c2c	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+16:00:58 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Src/main.c:53:
+../Inc/SysTick.h: In function 'SysTick_Config':
+../Inc/SysTick.h:35:23: error: 'SysTick_LOAD_RELOAD_Msk' undeclared (first use in this function)
+   35 |   if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~
+../Inc/SysTick.h:35:23: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/SysTick.h:40:3: error: 'SysTick' undeclared (first use in this function)
+   40 |   SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+      |   ^~~~~~~
+../Inc/SysTick.h:41:3: warning: implicit declaration of function 'NVIC_SetPriority' [-Wimplicit-function-declaration]
+   41 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |   ^~~~~~~~~~~~~~~~
+../Inc/SysTick.h:41:21: error: 'SysTick_IRQn' undeclared (first use in this function)
+   41 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                     ^~~~~~~~~~~~
+../Inc/SysTick.h:41:43: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+   41 |   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                                           ^~~~~~~~~~~~~~~~
+../Inc/SysTick.h:43:20: error: 'SysTick_CTRL_CLKSOURCE_Msk' undeclared (first use in this function)
+   43 |   SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Inc/SysTick.h:44:20: error: 'SysTick_CTRL_TICKINT_Msk' undeclared (first use in this function)
+   44 |                    SysTick_CTRL_TICKINT_Msk   |
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~
+../Inc/SysTick.h:45:20: error: 'SysTick_CTRL_ENABLE_Msk' undeclared (first use in this function)
+   45 |                    SysTick_CTRL_ENABLE_Msk;                         /* Enable SysTick IRQ and SysTick Timer */
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:10:47 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Src/main.c:53:
+../Inc/SysTick.h: In function 'SysTick_Config':
+../Inc/SysTick.h:93:9: error: 'SysTick' undeclared (first use in this function)
+   93 |         SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+      |         ^~~~~~~
+../Inc/SysTick.h:93:9: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/SysTick.h:94:9: warning: implicit declaration of function 'NVIC_SetPriority' [-Wimplicit-function-declaration]
+   94 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |         ^~~~~~~~~~~~~~~~
+../Inc/SysTick.h:94:27: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+   94 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                           ^~~~~~~~~~~~
+      |                           SysTick_Type
+../Inc/SysTick.h:94:49: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+   94 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                                                 ^~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:18:45 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Src/main.c:53:
+../Inc/SysTick.h: In function 'SysTick_Config':
+../Inc/SysTick.h:276:9: error: 'SysTick' undeclared (first use in this function)
+  276 |         SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+      |         ^~~~~~~
+../Inc/SysTick.h:276:9: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/SysTick.h:277:9: warning: implicit declaration of function 'NVIC_SetPriority' [-Wimplicit-function-declaration]
+  277 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |         ^~~~~~~~~~~~~~~~
+../Inc/SysTick.h:277:27: error: 'SysTick_IRQn' undeclared (first use in this function); did you mean 'SysTick_Type'?
+  277 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                           ^~~~~~~~~~~~
+      |                           SysTick_Type
+../Inc/SysTick.h:277:49: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+  277 |         NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+      |                                                 ^~~~~~~~~~~~~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:26:27 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Inc/SysTick.h:11,
+                 from ../Src/main.c:53:
+../Inc/core_cm3.h:63:10: fatal error: cmsis_version.h: No such file or directory
+   63 | #include "cmsis_version.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:27:29 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Inc/SysTick.h:11,
+                 from ../Src/main.c:53:
+../Inc/core_cm3.h:63:10: fatal error: cmsis_version.h: No such file or directory
+   63 | #include "cmsis_version.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:28:36 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Inc/SysTick.h:11,
+                 from ../Src/main.c:53:
+../Inc/core_cm3.h:115:10: fatal error: cmsis_compiler.h: No such file or directory
+  115 | #include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
+      |          ^~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:30:26 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Inc/core_cm3.h:115,
+                 from ../Inc/SysTick.h:11,
+                 from ../Src/main.c:53:
+../Inc/cmsis_compiler.h:48:12: fatal error: cmsis_gcc.h: No such file or directory
+   48 |   #include "cmsis_gcc.h"
+      |            ^~~~~~~~~~~~~
+compilation terminated.
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:31:22 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+In file included from ../Inc/SysTick.h:11,
+                 from ../Src/main.c:53:
+../Inc/core_cm3.h:1511:39: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1511 | __STATIC_INLINE void __NVIC_EnableIRQ(IRQn_Type IRQn)
+      |                                       ^~~~~~~~~
+      |                                       ITM_Type
+../Inc/core_cm3.h:1528:46: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1528 | __STATIC_INLINE uint32_t __NVIC_GetEnableIRQ(IRQn_Type IRQn)
+      |                                              ^~~~~~~~~
+      |                                              ITM_Type
+../Inc/core_cm3.h:1547:40: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1547 | __STATIC_INLINE void __NVIC_DisableIRQ(IRQn_Type IRQn)
+      |                                        ^~~~~~~~~
+      |                                        ITM_Type
+../Inc/core_cm3.h:1566:47: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1566 | __STATIC_INLINE uint32_t __NVIC_GetPendingIRQ(IRQn_Type IRQn)
+      |                                               ^~~~~~~~~
+      |                                               ITM_Type
+../Inc/core_cm3.h:1585:43: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1585 | __STATIC_INLINE void __NVIC_SetPendingIRQ(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+      |                                           ITM_Type
+../Inc/core_cm3.h:1600:45: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1600 | __STATIC_INLINE void __NVIC_ClearPendingIRQ(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+      |                                             ITM_Type
+../Inc/core_cm3.h:1617:43: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1617 | __STATIC_INLINE uint32_t __NVIC_GetActive(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+      |                                           ITM_Type
+../Inc/core_cm3.h:1639:41: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1639 | __STATIC_INLINE void __NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)
+      |                                         ^~~~~~~~~
+      |                                         ITM_Type
+../Inc/core_cm3.h:1661:45: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1661 | __STATIC_INLINE uint32_t __NVIC_GetPriority(IRQn_Type IRQn)
+      |                                             ^~~~~~~~~
+      |                                             ITM_Type
+../Inc/core_cm3.h: In function 'NVIC_EncodePriority':
+../Inc/core_cm3.h:1692:64: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+ 1692 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^~~~~~~~~~~~~~~~
+../Inc/core_cm3.h:1692:64: note: each undeclared identifier is reported only once for each function it appears in
+../Inc/core_cm3.h: In function 'NVIC_DecodePriority':
+../Inc/core_cm3.h:1719:64: error: '__NVIC_PRIO_BITS' undeclared (first use in this function)
+ 1719 |   PreemptPriorityBits = ((7UL - PriorityGroupTmp) > (uint32_t)(__NVIC_PRIO_BITS)) ? (uint32_t)(__NVIC_PRIO_BITS) : (uint32_t)(7UL - PriorityGroupTmp);
+      |                                                                ^~~~~~~~~~~~~~~~
+../Inc/core_cm3.h: At top level:
+../Inc/core_cm3.h:1736:39: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1736 | __STATIC_INLINE void __NVIC_SetVector(IRQn_Type IRQn, uint32_t vector)
+      |                                       ^~~~~~~~~
+      |                                       ITM_Type
+../Inc/core_cm3.h:1751:43: error: unknown type name 'IRQn_Type'; did you mean 'ITM_Type'?
+ 1751 | __STATIC_INLINE uint32_t __NVIC_GetVector(IRQn_Type IRQn)
+      |                                           ^~~~~~~~~
+      |                                           ITM_Type
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:50:07 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1464	    112	   1568	   3144	    c48	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 
+16:52:19 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+../Src/main.c: In function 'main':
+../Src/main.c:179:35: error: 'n' undeclared (first use in this function)
+  179 |                         delay(FSM[n].Time);
+      |                                   ^
+../Src/main.c:179:35: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:52:51 **** Incremental Build of configuration Debug for project Lab5_Traficlight ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C8Tx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:125: warning: "RCC_CFGR_HPRE_DIV1" redefined
+  125 | #define  RCC_CFGR_HPRE_DIV1                  ((uint32_t)0x00000000)        /*!< SYSCLK not divided */
+      | 
+In file included from ../Src/main.c:52:
+../Inc/PLL.h:46: note: this is the location of the previous definition
+   46 | #define RCC_CFGR_HPRE_DIV1      0x0070  // HPRE[7:4] 0---
+      | 
+arm-none-eabi-gcc -o "Lab5_Traficlight.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab5_Traficlight\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab5_Traficlight.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab5_Traficlight.elf
+ 
+arm-none-eabi-size   Lab5_Traficlight.elf 
+arm-none-eabi-objdump -h -S  Lab5_Traficlight.elf  > "Lab5_Traficlight.list"
+   text	   data	    bss	    dec	    hex	filename
+   1548	    112	   1568	   3228	    c9c	Lab5_Traficlight.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab5_Traficlight.list
+ 

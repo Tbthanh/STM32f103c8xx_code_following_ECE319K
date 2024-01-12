@@ -1,0 +1,313 @@
+/*
+ * SysTaoick.h
+ *
+ *  Created on: Jan 10, 2024
+ *      Author: TBTHANH
+ */
+
+#ifndef SYSTICK_H_
+#define SYSTICK_H_
+
+/*******************************************************************************
+ *                 Register Abstraction
+  Core Register contain:
+  - Core Register
+  - Core NVIC Register
+  - Core SCB Register
+  - Core SysTick Register
+  - Core Debug Register
+  - Core MPU Register
+ ******************************************************************************/
+/**
+  \defgroup CMSIS_core_register Defines and Type Definitions
+  \brief Type definitions and defines for Cortex-M processor based devices.
+*/
+
+/**
+  \ingroup    CMSIS_core_register
+  \defgroup   CMSIS_CORE  Status and Control Registers
+  \brief      Core Register type definitions.
+  @{
+ */
+
+/**
+  \brief  Union type to access the Application Program Status Register (APSR).
+ */
+typedef union
+{
+  struct
+  {
+    uint32_t _reserved0:27;              /*!< bit:  0..26  Reserved */
+    uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag */
+    uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+    uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+    uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+    uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+  } b;                                   /*!< Structure used for bit  access */
+  uint32_t w;                            /*!< Type      used for word access */
+} APSR_Type;
+
+/* APSR Register Definitions */
+#define APSR_N_Pos                         31U                                            /*!< APSR: N Position */
+#define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR: N Mask */
+
+#define APSR_Z_Pos                         30U                                            /*!< APSR: Z Position */
+#define APSR_Z_Msk                         (1UL << APSR_Z_Pos)                            /*!< APSR: Z Mask */
+
+#define APSR_C_Pos                         29U                                            /*!< APSR: C Position */
+#define APSR_C_Msk                         (1UL << APSR_C_Pos)                            /*!< APSR: C Mask */
+
+#define APSR_V_Pos                         28U                                            /*!< APSR: V Position */
+#define APSR_V_Msk                         (1UL << APSR_V_Pos)                            /*!< APSR: V Mask */
+
+#define APSR_Q_Pos                         27U                                            /*!< APSR: Q Position */
+#define APSR_Q_Msk                         (1UL << APSR_Q_Pos)                            /*!< APSR: Q Mask */
+
+
+/**
+  \brief  Union type to access the Interrupt Program Status Register (IPSR).
+ */
+typedef union
+{
+  struct
+  {
+    uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+    uint32_t _reserved0:23;              /*!< bit:  9..31  Reserved */
+  } b;                                   /*!< Structure used for bit  access */
+  uint32_t w;                            /*!< Type      used for word access */
+} IPSR_Type;
+
+/* IPSR Register Definitions */
+#define IPSR_ISR_Pos                        0U                                            /*!< IPSR: ISR Position */
+#define IPSR_ISR_Msk                       (0x1FFUL /*<< IPSR_ISR_Pos*/)                  /*!< IPSR: ISR Mask */
+
+
+/**
+  \brief  Union type to access the Special-Purpose Program Status Registers (xPSR).
+ */
+typedef union
+{
+  struct
+  {
+    uint32_t ISR:9;                      /*!< bit:  0.. 8  Exception number */
+    uint32_t _reserved0:1;               /*!< bit:      9  Reserved */
+    uint32_t ICI_IT_1:6;                 /*!< bit: 10..15  ICI/IT part 1 */
+    uint32_t _reserved1:8;               /*!< bit: 16..23  Reserved */
+    uint32_t T:1;                        /*!< bit:     24  Thumb bit */
+    uint32_t ICI_IT_2:2;                 /*!< bit: 25..26  ICI/IT part 2 */
+    uint32_t Q:1;                        /*!< bit:     27  Saturation condition flag */
+    uint32_t V:1;                        /*!< bit:     28  Overflow condition code flag */
+    uint32_t C:1;                        /*!< bit:     29  Carry condition code flag */
+    uint32_t Z:1;                        /*!< bit:     30  Zero condition code flag */
+    uint32_t N:1;                        /*!< bit:     31  Negative condition code flag */
+  } b;                                   /*!< Structure used for bit  access */
+  uint32_t w;                            /*!< Type      used for word access */
+} xPSR_Type;
+
+/* xPSR Register Definitions */
+#define xPSR_N_Pos                         31U                                            /*!< xPSR: N Position */
+#define xPSR_N_Msk                         (1UL << xPSR_N_Pos)                            /*!< xPSR: N Mask */
+
+#define xPSR_Z_Pos                         30U                                            /*!< xPSR: Z Position */
+#define xPSR_Z_Msk                         (1UL << xPSR_Z_Pos)                            /*!< xPSR: Z Mask */
+
+#define xPSR_C_Pos                         29U                                            /*!< xPSR: C Position */
+#define xPSR_C_Msk                         (1UL << xPSR_C_Pos)                            /*!< xPSR: C Mask */
+
+#define xPSR_V_Pos                         28U                                            /*!< xPSR: V Position */
+#define xPSR_V_Msk                         (1UL << xPSR_V_Pos)                            /*!< xPSR: V Mask */
+
+#define xPSR_Q_Pos                         27U                                            /*!< xPSR: Q Position */
+#define xPSR_Q_Msk                         (1UL << xPSR_Q_Pos)                            /*!< xPSR: Q Mask */
+
+#define xPSR_ICI_IT_2_Pos                  25U                                            /*!< xPSR: ICI/IT part 2 Position */
+#define xPSR_ICI_IT_2_Msk                  (3UL << xPSR_ICI_IT_2_Pos)                     /*!< xPSR: ICI/IT part 2 Mask */
+
+#define xPSR_T_Pos                         24U                                            /*!< xPSR: T Position */
+#define xPSR_T_Msk                         (1UL << xPSR_T_Pos)                            /*!< xPSR: T Mask */
+
+#define xPSR_ICI_IT_1_Pos                  10U                                            /*!< xPSR: ICI/IT part 1 Position */
+#define xPSR_ICI_IT_1_Msk                  (0x3FUL << xPSR_ICI_IT_1_Pos)                  /*!< xPSR: ICI/IT part 1 Mask */
+
+#define xPSR_ISR_Pos                        0U                                            /*!< xPSR: ISR Position */
+#define xPSR_ISR_Msk                       (0x1FFUL /*<< xPSR_ISR_Pos*/)                  /*!< xPSR: ISR Mask */
+
+
+/**
+  \brief  Union type to access the Control Registers (CONTROL).
+ */
+typedef union
+{
+  struct
+  {
+    uint32_t nPRIV:1;                    /*!< bit:      0  Execution privilege in Thread mode */
+    uint32_t SPSEL:1;                    /*!< bit:      1  Stack to be used */
+    uint32_t _reserved1:30;              /*!< bit:  2..31  Reserved */
+  } b;                                   /*!< Structure used for bit  access */
+  uint32_t w;                            /*!< Type      used for word access */
+} CONTROL_Type;
+
+/* CONTROL Register Definitions */
+#define CONTROL_SPSEL_Pos                   1U                                            /*!< CONTROL: SPSEL Position */
+#define CONTROL_SPSEL_Msk                  (1UL << CONTROL_SPSEL_Pos)                     /*!< CONTROL: SPSEL Mask */
+
+#define CONTROL_nPRIV_Pos                   0U                                            /*!< CONTROL: nPRIV Position */
+#define CONTROL_nPRIV_Msk                  (1UL /*<< CONTROL_nPRIV_Pos*/)                 /*!< CONTROL: nPRIV Mask */
+
+/*@} end of group CMSIS_CORE */
+
+/**
+  \ingroup    CMSIS_core_register
+  \defgroup   CMSIS_NVIC  Nested Vectored Interrupt Controller (NVIC)
+  \brief      Type definitions for the NVIC Registers
+  @{
+ */
+
+/**
+  \brief  Structure type to access the Nested Vectored Interrupt Controller (NVIC).
+ */
+typedef struct
+{
+	uint32_t ISER[8U];               /*!< Offset: 0x000 (R/W)  Interrupt Set Enable Register */
+	uint32_t RESERVED0[24U];
+	uint32_t ICER[8U];               /*!< Offset: 0x080 (R/W)  Interrupt Clear Enable Register */
+	uint32_t RSERVED1[24U];
+	uint32_t ISPR[8U];               /*!< Offset: 0x100 (R/W)  Interrupt Set Pending Register */
+	uint32_t RESERVED2[24U];
+	uint32_t ICPR[8U];               /*!< Offset: 0x180 (R/W)  Interrupt Clear Pending Register */
+	uint32_t RESERVED3[24U];
+	uint32_t IABR[8U];               /*!< Offset: 0x200 (R/W)  Interrupt Active bit Register */
+	uint32_t RESERVED4[56U];
+	uint8_t  IP[240U];               /*!< Offset: 0x300 (R/W)  Interrupt Priority Register (8Bit wide) */
+	uint32_t RESERVED5[644U];
+	uint32_t STIR;                   /*!< Offset: 0xE00 ( /W)  Software Trigger Interrupt Register */
+}  NVIC_Type;
+
+/* Software Triggered Interrupt Register Definitions */
+#define NVIC_STIR_INTID_Pos                 0U                                         /*!< STIR: INTLINESNUM Position */
+#define NVIC_STIR_INTID_Msk                (0x1FFUL /*<< NVIC_STIR_INTID_Pos*/)        /*!< STIR: INTLINESNUM Mask */
+
+/*@} end of group CMSIS_NVIC */
+
+
+
+/**
+  \ingroup  CMSIS_core_register
+  \defgroup CMSIS_SysTick     System Tick Timer (SysTick)
+  \brief    Type definitions for the System Timer Registers.
+  @{
+ */
+
+/**
+  \brief  Structure type to access the System Timer (SysTick).
+ */
+typedef struct
+{
+	uint32_t CTRL;                   /*!< Offset: 0x000 (R/W)  SysTick Control and Status Register */
+	uint32_t LOAD;                   /*!< Offset: 0x004 (R/W)  SysTick Reload Value Register */
+	uint32_t VAL;                    /*!< Offset: 0x008 (R/W)  SysTick Current Value Register */
+	uint32_t CALIB;                  /*!< Offset: 0x00C (R/ )  SysTick Calibration Register */
+} SysTick_Type;
+
+/* SysTick Control / Status Register Definitions */
+#define SysTick_CTRL_COUNTFLAG_Pos         16U                                            /*!< SysTick CTRL: COUNTFLAG Position */
+#define SysTick_CTRL_COUNTFLAG_Msk         (1UL << SysTick_CTRL_COUNTFLAG_Pos)            /*!< SysTick CTRL: COUNTFLAG Mask */
+
+#define SysTick_CTRL_CLKSOURCE_Pos          2U                                            /*!< SysTick CTRL: CLKSOURCE Position */
+#define SysTick_CTRL_CLKSOURCE_Msk         (1UL << SysTick_CTRL_CLKSOURCE_Pos)            /*!< SysTick CTRL: CLKSOURCE Mask */
+
+#define SysTick_CTRL_TICKINT_Pos            1U                                            /*!< SysTick CTRL: TICKINT Position */
+#define SysTick_CTRL_TICKINT_Msk           (1UL << SysTick_CTRL_TICKINT_Pos)              /*!< SysTick CTRL: TICKINT Mask */
+
+#define SysTick_CTRL_ENABLE_Pos             0U                                            /*!< SysTick CTRL: ENABLE Position */
+#define SysTick_CTRL_ENABLE_Msk            (1UL /*<< SysTick_CTRL_ENABLE_Pos*/)           /*!< SysTick CTRL: ENABLE Mask */
+
+/* SysTick Reload Register Definitions */
+#define SysTick_LOAD_RELOAD_Pos             0U                                            /*!< SysTick LOAD: RELOAD Position */
+#define SysTick_LOAD_RELOAD_Msk            (0xFFFFFFUL /*<< SysTick_LOAD_RELOAD_Pos*/)    /*!< SysTick LOAD: RELOAD Mask */
+
+/* SysTick Current Register Definitions */
+#define SysTick_VAL_CURRENT_Pos             0U                                            /*!< SysTick VAL: CURRENT Position */
+#define SysTick_VAL_CURRENT_Msk            (0xFFFFFFUL /*<< SysTick_VAL_CURRENT_Pos*/)    /*!< SysTick VAL: CURRENT Mask */
+
+/* SysTick Calibration Register Definitions */
+#define SysTick_CALIB_NOREF_Pos            31U                                            /*!< SysTick CALIB: NOREF Position */
+#define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysTick CALIB: NOREF Mask */
+
+#define SysTick_CALIB_SKEW_Pos             30U                                            /*!< SysTick CALIB: SKEW Position */
+#define SysTick_CALIB_SKEW_Msk             (1UL << SysTick_CALIB_SKEW_Pos)                /*!< SysTick CALIB: SKEW Mask */
+
+#define SysTick_CALIB_TENMS_Pos             0U                                            /*!< SysTick CALIB: TENMS Position */
+#define SysTick_CALIB_TENMS_Msk            (0xFFFFFFUL /*<< SysTick_CALIB_TENMS_Pos*/)    /*!< SysTick CALIB: TENMS Mask */
+
+/*@} end of group CMSIS_SysTick */
+
+
+/* ##################################    SysTick function  ############################################ */
+/**
+ * Link: https://github.com/csrohit/bluepill-systick/blob/main/rtos/include/core_cm3.h#L1834
+ *
+  \ingroup  CMSIS_Core_FunctionInterface
+  \defgroup CMSIS_Core_SysTickFunctions SysTick Functions
+  \brief    Functions that configure the System.
+  @{
+ */
+
+
+/**
+  \brief   System Tick Configuration
+  \details Initializes the System Timer and its interrupt, and starts the System Tick Timer.
+           Counter is in free running mode to generate periodic interrupts.
+  \param [in]  ticks  Number of ticks between two interrupts.
+  \return          0  Function succeeded.
+  \return          1  Function failed.
+  \note    When the variable <b>__Vendor_SysTickConfig</b> is set to 1, then the
+           function <b>SysTick_Config</b> is not included. In this case, the file <b><i>device</i>.h</b>
+           must contain a vendor-specific implementation of this function.
+ */
+uint32_t SysTick_Config(uint32_t ticks)
+{
+	// 1ul is an unsigned long version of 1
+	if ((ticks - 1UL) > SysTick_LOAD_RELOAD_Msk)
+	{
+		return (1UL);                                                   /* Reload value impossible */
+	}
+
+	SysTick->LOAD  = (uint32_t)(ticks - 1UL);                         /* set reload register */
+	NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
+	SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Value */
+	SysTick->CTRL  = SysTick_CTRL_CLKSOURCE_Msk |
+				   SysTick_CTRL_TICKINT_Msk   |
+				   SysTick_CTRL_ENABLE_Msk;                         /* Enable SysTick IRQ and SysTick Timer */
+	return (0UL);                                                     /* Function successful */
+}
+/*@} end of CMSIS_Core_SysTickFunctions */
+
+
+volatile uint32_t msTicks = 0;
+
+/**
+ * @brief Interrupt handler function
+ *
+ */
+void SysTick_Handler(void)
+{
+	msTicks++;
+}
+
+/**
+ * @brief Add blocking delay
+ *
+ * @param ms delay in milliseconds
+ */
+void delay(int ms)
+{
+	uint32_t expected_ticks = msTicks + ms;
+	while (msTicks < expected_ticks)
+	{
+		__asm("nop");
+	}
+}
+
+
+#endif /* SYSTICK_H_ */
