@@ -390,11 +390,6 @@
               <FilePath>.\main.c</FilePath>
             </File>
             <File>
-              <FileName>Register.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Register.h</FilePath>
-            </File>
-            <File>
               <FileName>startup_stm32f103c8tx.s</FileName>
               <FileType>2</FileType>
               <FilePath>.\Startup\startup_stm32f103c8tx.s</FilePath>
