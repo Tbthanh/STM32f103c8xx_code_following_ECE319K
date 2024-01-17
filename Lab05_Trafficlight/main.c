@@ -49,8 +49,8 @@
 **/
 
 #include <stdint.h>
-#include "PLL.h"
-#include "SysTick.h"
+//#include "PLL.h"
+//#include "SysTick.h"
 #include "Register.h"
 
 // states
@@ -82,7 +82,7 @@ struct State
 // Blink of walk need to look into more!!
 // FSM of states
 typedef const struct State STyp;
-STyp FSM[10]={
+static STyp FSM[10]={
 	// jSo : just South
 	{0x0C0,GreenTime,{wSo,wSo,wSo,wSo,jSo,wSo,wSo,wSo}},
 	// wSo : wait South
@@ -106,57 +106,31 @@ STyp FSM[10]={
 };
 
 // initialize port B 4-9 and B 0-1
-void portB_Init(void)
-{
-	// CRL for pin B 4-7 and 0-1
-	*(GPIOB->CRL) |= 0x11110011;
-	// CLH for pin B 8-9
-	*(GPIOB->CRH) |= 0x00000011;
-	// Optional for clearing / setting the LED
-}
+void portB_Init(void);
 
 // initialize port A 0-2
-void portA_Init(void)
-{
-	// CRL for pin A 0-2
-	*(GPIOA->CRL) |= (uint32_t)0x00000088;
-	// Pull up pin A 0-2
-	*(GPIOA->ODR) |= (uint32_t)0x00000003;
-}
+void portA_Init(void);
 
 // function for flashing walking light 4 times B0-1
-void flashing(uint32_t time)
-{
-	time /= 8;
-	int8_t count = 5;
-	while(count--)
-	{
-		*(GPIOB->ODR) |= 0x03;		// ensure the led on
-		*(GPIOB->ODR) &= 0xFFFFFFFE;	// turn off white
-		delay(time);
-		*(GPIOB->ODR) |= 0x03;		// ensure the led on
-		*(GPIOB->ODR) &= 0xFFFFFFFD;	// turn off red
-		delay(time);
-	}
-}
+void flashing(uint32_t time);
 
 int main(void)
 {
 	// initialize 48 MHz system clock
-	SystemInit();
+	//SystemInit();
 
 	// Enable RCC for GPIO
-	*(RCC->APB2ENR) |= 0x0C;
+	RCC->APB2ENR |= 0x0C;
 
 	// Give time to stabilize the clock
-	while(0 == (*(RCC->APB2ENR) & 0x0C)){}
+	while(0 == ((RCC->APB2ENR) & 0x0C)){}
 
 	// Initialize GPIOs
 	portA_Init();
 	portB_Init();
 
 	// Initial state: red All
-	uint8_t state = rAl;
+	uint8_t state = (uint8_t)rAl;
 
 	// Input
 	volatile uint32_t input = 0x00;
@@ -165,10 +139,10 @@ int main(void)
 	for(;;)
 	{
 		// set the output to the current state
-		*GPIOB->ODR = FSM[state].Output;
+		GPIOB->ODR = FSM[state].Output;
 
 		// check if wWa
-		if (state == wWa)
+		if (state == (uint8_t)wWa)
 		{
 			// flash white-red-off
 			flashing(FSM[state].Time);
@@ -176,14 +150,46 @@ int main(void)
 		else
 		{
 			// delay 10ms * FSM[state].Time
-			delay(FSM[state].Time);
+			//delay(FSM[state].Time);
 		}
 
 		// get new input
-		input = *(GPIOA->IDR);
+		input = GPIOA->IDR;
 		//input = (*GPIO_A_IDR & 0x07);
 
 		// go to next state
-		state = FSM[state].Next[input];
+		state = (uint8_t)(FSM[state].Next[input]);
+	}
+}
+
+void portB_Init(void)
+{
+	// CRL for pin B 4-7 and 0-1
+	GPIOB->CRL |= 0x11110011;
+	// CLH for pin B 8-9
+	GPIOB->CRH |= 0x00000011;
+	// Optional for clearing / setting the LED
+}
+
+void portA_Init(void)
+{
+	// CRL for pin A 0-2
+	GPIOA->CRL |= (uint32_t)0x00000088;
+	// Pull up pin A 0-2
+	GPIOA->ODR |= (uint32_t)0x00000003;
+}
+
+void flashing(uint32_t time)
+{
+	time /= 8;
+	int8_t repeatTime = 5;
+	while(repeatTime--)
+	{
+		GPIOB->ODR |= 0x03;		// ensure the led on
+		GPIOB->ODR &= 0xFFFFFFFE;	// turn off white
+		//delay(time);
+		GPIOB->ODR |= 0x03;		// ensure the led on
+		GPIOB->ODR &= 0xFFFFFFFD;	// turn off red
+		//delay(time);
 	}
 }

@@ -1,0 +1,85 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ba Thanh Tran, HUST, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab05_Trafficlight\Lab05_Trafficlight.uvprojx
+Project File Date:  01/17/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+PLL.c(125): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  125 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4U)];
+      |         ^~~~~~~~~~~~~
+1 warning generated.
+compiling PLL.c...
+main.c(133): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  133 |         uint8_t state = (uint8_t)rAl;
+      |                 ^
+main.c(185): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  185 |         int8_t repeatTime = 5;
+      |                ^
+main.c(182): warning: parameter 'time' set but not used [-Wunused-but-set-parameter]
+  182 | void flashing(uint32_t time)
+      |                        ^
+main.c(142): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  142 |                 GPIOB->ODR = FSM[state].Output;
+      |                              ^~~
+main.c(148): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  148 |                         flashing(FSM[state].Time);
+      |                                  ^~~
+main.c(161): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  161 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~~~~~~~~~~~~~
+main.c(161): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  161 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~
+7 warnings generated.
+compiling main.c...
+linking...
+.\Objects\Lab05_Trafficlight.axf: Error: L6630E: Invalid token start expected number or ( but found R at position 7 on line 22
+.\Objects\Lab05_Trafficlight.axf: Error: L6629E: Unmatched parentheses expecting ) but found R at position 7 on line 22
+.\Objects\Lab05_Trafficlight.axf: Error: L6226E: Missing base address for region ENTRY.
+..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld(22): error: L6292E: Ignoring unknown attribute 'Reset_Handler' specified for region ENTRY.
+..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld(22): error: L6228E: Expected '{', found ')...'.
+..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld: Error: L6372E: Image needs at least one load region.
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 6 error messages.
+".\Objects\Lab05_Trafficlight.axf" - 6 Error(s), 8 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
