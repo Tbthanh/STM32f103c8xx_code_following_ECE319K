@@ -6,14 +6,24 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="RCC_CFGR_PLLSRC"/>
 		<list key="findhistory">
+			<item value="RCC_CFGR_PLLSRC"/>
+			<item value="SystemCoreClock"/>
+			<item value="RESET"/>
+			<item value="GPIOA_"/>
+			<item value="GPIO_A_BASE  + "/>
+			<item value="GPIOx_"/>
 		</list>
 		<list key="replacehistory">
+			<item value="RCC_CR_RESET"/>
+			<item value="GPIOB_"/>
+			<item value="GPIOA_"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="358"/>
-		<item key="DIALOG_Y_ORIGIN" value="222"/>
+		<item key="DIALOG_X_ORIGIN" value="1273"/>
+		<item key="DIALOG_Y_ORIGIN" value="144"/>
 		<item key="DIALOG_WIDTH" value="412"/>
 		<item key="DIALOG_HEIGHT" value="446"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|11.25|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

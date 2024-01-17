@@ -96,3 +96,6 @@ make: *** Waiting for unfinished jobs....
       |                                     ^~~~~~~~~~~~~
 make: *** [Src/subdir.mk:28: Src/system_stm32f1xx.o] Error 1
 "make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+01:12:04 Build Failed. 25 errors, 1 warnings. (took 490ms)
+
