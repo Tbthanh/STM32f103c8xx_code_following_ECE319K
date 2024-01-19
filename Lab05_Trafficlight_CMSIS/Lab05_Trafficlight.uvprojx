@@ -134,11 +134,11 @@
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
             <Capability>1</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <DriverSelection>4096</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -329,7 +329,7 @@
             <uC99>1</uC99>
             <uGnu>1</uGnu>
             <useXO>0</useXO>
-            <v6Lang>3</v6Lang>
+            <v6Lang>5</v6Lang>
             <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -371,7 +371,7 @@
             <TextAddressRange>0x08000000</TextAddressRange>
             <DataAddressRange>0x20000000</DataAddressRange>
             <pXoBase></pXoBase>
-            <ScatterFile>..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld</ScatterFile>
+            <ScatterFile>..\test\STM32F103C8Tx_FLASH.ld</ScatterFile>
             <IncludeLibs></IncludeLibs>
             <IncludeLibsPath></IncludeLibsPath>
             <Misc></Misc>
@@ -395,14 +395,14 @@
               <FilePath>.\Startup\startup_stm32f103c8tx.s</FilePath>
             </File>
             <File>
-              <FileName>PLL.h</FileName>
+              <FileName>SysTick.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\PLL.h</FilePath>
+              <FilePath>.\SysTick.h</FilePath>
             </File>
             <File>
-              <FileName>PLL.c</FileName>
+              <FileName>SysTick.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\PLL.c</FilePath>
+              <FilePath>.\SysTick.c</FilePath>
             </File>
           </Files>
         </Group>

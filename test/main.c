@@ -29,7 +29,7 @@ void portB_Init(void)
 {
 	// CRL for pin B 4-7 and 0-1
 	GPIOB->CRL &= 0x0000FF00;
-	GPIOB->CRL |= 0x11110011;
+	GPIOB->CRL |= 0x22220022;
 	// CLH for pin B 8-9
 	GPIOB->CRH |= 0x00000011;
 	// Optional for clearing / setting the LED

@@ -1,0 +1,30 @@
+Lab 5 sờ na ni gần
+link: https://docs.google.com/document/d/1MDt8CCzsURqnGKx14CS1Sp-d_kqAHxbYl89t-8SYL1I/edit?usp=sharing
+
+SPEC, tổng quan hệ thống:
+	Input - đờ vờ:
+		-South sensor (cảm biến Nam) (logic dương) mô phỏng bằng nút, ấn và giữ cho đến khi đường phía Nam không còn xe
+		-West sensor (cảm biến Tây) (logic dương) như South sensor
+		-Pedestrian sensor (logic dương) như hai  nút kia
+
+	Output - đờ rờ: tổng có 9 output
+		-R/G/B x 2 = 6 cho hai đường xe chạy, để tránh tai nạn thì  nên có  một khoảng tất cả đường toàn đỏ khi một đường chuyển sang vàng và một đường chuyển sang xanh.
+		- Đèn led 3 màu cho walk light: chuyển trắng khi được đi, có 3 chế độ/ điều kiện như sau:
+			(1) Đi bộ: Đèn walk trắng, hai đèn kia đỏ
+			(2) Cảnh báo: nháy đỏ hai lần để báo hiệu nhanh cái chân lên, tự định thời gian nháy đỏ, nên có thời điểm tất cả đèn đỏ hết để chuyển quyền di chuyển cho làn khác.
+			(3) Méo được đi: đỏ và đỏ
+
+	Light sequence - trình tự bật sáng:
+		-Nếu không có đèn: hệ thống sẽ được đặt trong mô hình an toàn:
+			+Một đường xanh,  đường còn lại và đi bộ đỏ lòm
+			+Đi bộ okie phần còn lại đỏ lòm
+		-Chọn trình tự bật sáng nếu cả 3 input dương là 
+			So-We-Wa-So-We-Wa
+		-Chú ý một số điều kiện dừng tất ví dụ như
+			+Giữa đèn vàng và đèn xanh đường khác
+			+Giữa đèn vàng và đi bộ
+			+Giữa đi bộ và đèn xanh
+		- Một số trường hợp có thể gây khó hiểu:
+			+
+
+Thiết kế Fát Sấp Mặt:

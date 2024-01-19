@@ -9,25 +9,25 @@
  *=============================================================
  *        System Clock source				| PLL(HSE)
  *-------------------------------------------------------------
- *        SYSCLK(Hz)						| 48000000
+ *        SYSCLK(Hz)								| 48000000
  *-------------------------------------------------------------
- *        HCLK(Hz)							| 48000000
+ *        HCLK(Hz)									| 48000000
  *-------------------------------------------------------------
- *        AHB  Prescaler 					| 1
+ *        AHB  Prescaler 						| 1
  *-------------------------------------------------------------
- *        APB  Prescaler 					| 1
+ *        APB  Prescaler 						| 1
  *-------------------------------------------------------------
- *        APB1 Prescaler 					| 0.5
+ *        APB1 Prescaler 						| /2
  *-------------------------------------------------------------
  *        HSE Frequency(Hz)					| 8000000
  *-------------------------------------------------------------
- *        PLLMUL							| 6
+ *        PLLMUL										| 6
  *-------------------------------------------------------------
- *        PREDIV 							| 1
+ *        PREDIV 										| 1
  *-------------------------------------------------------------
  *        Flash Latency(WS)					| 1
  *-------------------------------------------------------------
- *        Prefetch Buffer					| ON
+ *        Prefetch Buffer						| ON
  *-------------------------------------------------------------
   **************************************************************
  */
@@ -35,13 +35,10 @@
 #ifndef PLL_H_
 #define PLL_H_
 
-#include "Register.h"
+#include <stdint.h>
+#include <stm32f10x.h>
+#include <system_stm32f10x.h>
 
-extern uint32_t SystemCoreClock;          /*!< System Clock Frequency (Core Clock) */
-extern const uint8_t  AHBPrescTable[16U];  /*!< AHB prescalers table values */
-extern const uint8_t  APBPrescTable[8U];   /*!< APB prescalers table values */
-
-extern void SystemInit(void);
-extern void SystemCoreClockUpdate(void);
+extern void PLLInit(void);
 
 #endif /* PLL_H_ */

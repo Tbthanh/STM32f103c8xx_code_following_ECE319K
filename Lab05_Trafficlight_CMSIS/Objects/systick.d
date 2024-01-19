@@ -1,4 +1,4 @@
-./objects/pll.o: PLL.c PLL.h \
+./objects/systick.o: SysTick.c SysTick.h \
   D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\include\stdint.h \
   D:\IEEE\ARM_KEIL\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h \
   RTE\_Target_1\RTE_Components.h \

@@ -6,17 +6,7 @@
  ******************************************************************************
  * @attention
  *
- * Copyright (c) 2024 STMicroelectronics.
- * All rights reserved.
- *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
- *
- ******************************************************************************
- */
-
-/*Input:
+ *Input:
  * 	A0:Walk
  * 	A1:West
  * 	A2:South
@@ -46,13 +36,14 @@
  *
  *For more info, please visit: https://github.com/Tbthanh/STM32f103c8xx_code_following_ECE319K
  *FSM and the excel sheet can be found: STM32f103c8xx_code_following_ECE319K/lab05_trafic_light/00_Others/
-**/
+ *
+ ******************************************************************************
+ */
 
 #include <stdint.h>
 #include <stm32f10x.h>
 #include <system_stm32f10x.h>
-//#include "PLL.h"
-//#include "SysTick.h"
+#include "SysTick.h"
 
 // states
 #define jSo		0
@@ -83,7 +74,7 @@ struct State
 // Blink of walk need to look into more!!
 // FSM of states
 typedef const struct State STyp;
-static STyp FSM[10]={
+static const STyp FSM[10]={
 	// jSo : just South
 	{0x0C0,GreenTime,{wSo,wSo,wSo,wSo,jSo,wSo,wSo,wSo}},
 	// wSo : wait South
@@ -115,10 +106,23 @@ void portA_Init(void);
 // function for flashing walking light 4 times B0-1
 void flashing(uint32_t time);
 
+// function to set the sysclock to 48Mhz
+void PLLInit(void);
+
+// function for systick
+volatile static uint32_t TimeDelay;
+void SysTick_Handler(void);
+void Delay(uint32_t nTime);
+
+/*******************************************************************************
+																	MAIN
+*******************************************************************************/
 int main(void)
 {
 	// initialize 48 MHz system clock
-	//SystemInit();
+	PLLInit();
+	// systick
+	SysTick_Init(1000);
 
 	// Enable RCC for GPIO
 	RCC->APB2ENR |= 0x0C;
@@ -151,7 +155,7 @@ int main(void)
 		else
 		{
 			// delay 10ms * FSM[state].Time
-			//delay(FSM[state].Time);
+			Delay(FSM[state].Time);
 		}
 
 		// get new input
@@ -162,14 +166,18 @@ int main(void)
 		state = (uint8_t)(FSM[state].Next[input]);
 	}
 }
+/**************************END OF MAIN*****************************************/
 
 void portB_Init(void)
 {
 	// CRL for pin B 4-7 and 0-1
-	GPIOB->CRL |= 0x11110011;
+	GPIOB->CRL |= 0x22220022;
 	// CLH for pin B 8-9
-	GPIOB->CRH |= 0x00000011;
-	// Optional for clearing / setting the LED
+	GPIOB->CRH |= 0x00000022;
+	// Cheking all the LED
+	GPIOB->ODR |= 0x000003F3;
+	Delay(100);
+	GPIOB->ODR &= 0xFFFFFC0C;
 }
 
 void portA_Init(void)
@@ -188,9 +196,57 @@ void flashing(uint32_t time)
 	{
 		GPIOB->ODR |= 0x03;		// ensure the led on
 		GPIOB->ODR &= 0xFFFFFFFE;	// turn off white
-		//delay(time);
+		Delay(time);
 		GPIOB->ODR |= 0x03;		// ensure the led on
 		GPIOB->ODR &= 0xFFFFFFFD;	// turn off red
-		//delay(time);
+		Delay(time);
 	}
+}
+
+void SysTick_Handler(void)
+{
+	if(TimeDelay > 0)
+		TimeDelay--;
+}
+
+void Delay(uint32_t nTime)
+{
+	// nTime: specifies the delay time length
+	TimeDelay = nTime;
+	while(TimeDelay != 0)
+		__asm("nop");		// busy wait
+}
+
+// function to set the sysclock to 48Mhz
+void PLLInit(void)
+{
+	/* this part follow the intruction of the following guide:
+			https://medium.com/@csrohit/clock-configuration-in-stm32-6a058da220e0
+	*/
+	// Set flash latency
+	// 48MHz = SYSCLK > 24MHz -> one wait state
+	FLASH->ACR |= FLASH_ACR_LATENCY_2;
+	
+	// setting APB,AHB & HSE divisor
+	// read stm32f10x.h and rm0008 103/1136 for more detail
+	RCC->CFGR |= RCC_CFGR_PPRE1_DIV2;
+	RCC->CFGR |= RCC_CFGR_PPRE2_DIV1;
+	RCC->CFGR |= RCC_CFGR_PLLXTPRE_HSE;
+	
+	// turn on HSE
+	RCC->CR 	|= RCC_CR_HSEON;
+	while (!(RCC->CR & RCC_CR_HSERDY))
+		;		// hse is ready
+	
+	// config PLL
+	RCC->CFGR |= RCC_CFGR_PLLMULL6;
+	RCC->CFGR |= RCC_CFGR_PLLSRC_HSE;
+	RCC->CFGR |= RCC_CR_PLLON;
+	while (!(RCC->CR & RCC_CR_PLLRDY))
+		;		// pll is ready
+	
+	// sellect the pll for coreclock
+	RCC->CFGR  |= RCC_CFGR_SW_PLL;	// 0X02
+	while (!(RCC->CFGR & RCC_CFGR_SWS_PLL))
+		;		// clock is ready 48Mhz
 }

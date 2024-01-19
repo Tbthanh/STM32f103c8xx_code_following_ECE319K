@@ -21,64 +21,122 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
-D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab05_Trafficlight\Lab05_Trafficlight.uvprojx
-Project File Date:  01/17/2024
+D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\Lab05_Trafficlight_CMSIS\Lab05_Trafficlight.uvprojx
+Project File Date:  01/19/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V6.21', folder: 'D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin'
-Build target 'Target 1'
+Rebuild target 'Target 1'
 assembling startup_stm32f103c8tx.s...
-PLL.c(125): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  125 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4U)];
-      |         ^~~~~~~~~~~~~
-1 warning generated.
-compiling PLL.c...
-main.c(133): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  133 |         uint8_t state = (uint8_t)rAl;
+SysTick.c(9): warning: In file included from...
+./SysTick.h(9): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+3 warnings generated.
+compiling SysTick.c...
+main.c(44): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(138): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  138 |         uint8_t state = (uint8_t)rAl;
       |                 ^
-main.c(185): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  185 |         int8_t repeatTime = 5;
+main.c(194): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  194 |         int8_t repeatTime = 5;
       |                ^
-main.c(182): warning: parameter 'time' set but not used [-Wunused-but-set-parameter]
-  182 | void flashing(uint32_t time)
-      |                        ^
-main.c(142): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  142 |                 GPIOB->ODR = FSM[state].Output;
+main.c(147): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  147 |                 GPIOB->ODR = FSM[state].Output;
       |                              ^~~
-main.c(148): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  148 |                         flashing(FSM[state].Time);
+main.c(153): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  153 |                         flashing(FSM[state].Time);
       |                                  ^~~
-main.c(161): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  161 |                 state = (uint8_t)(FSM[state].Next[input]);
+main.c(158): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  158 |                         Delay(FSM[state].Time);
+      |                               ^~~
+main.c(166): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  166 |                 state = (uint8_t)(FSM[state].Next[input]);
       |                                   ^~~~~~~~~~~~~~~
-main.c(161): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  161 |                 state = (uint8_t)(FSM[state].Next[input]);
+main.c(166): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  166 |                 state = (uint8_t)(FSM[state].Next[input]);
       |                                   ^~~
-7 warnings generated.
+10 warnings generated.
 compiling main.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
 linking...
-.\Objects\Lab05_Trafficlight.axf: Error: L6630E: Invalid token start expected number or ( but found R at position 7 on line 22
-.\Objects\Lab05_Trafficlight.axf: Error: L6629E: Unmatched parentheses expecting ) but found R at position 7 on line 22
+.\Objects\Lab05_Trafficlight.axf: Error: L6630E: Invalid token start expected number or ( but found R at position 7 on line 38
+.\Objects\Lab05_Trafficlight.axf: Error: L6629E: Unmatched parentheses expecting ) but found R at position 7 on line 38
 .\Objects\Lab05_Trafficlight.axf: Error: L6226E: Missing base address for region ENTRY.
-..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld(22): error: L6292E: Ignoring unknown attribute 'Reset_Handler' specified for region ENTRY.
-..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld(22): error: L6228E: Expected '{', found ')...'.
-..\Lab05_error\Lab5_Traficlight\STM32F103C8TX_FLASH.ld: Error: L6372E: Image needs at least one load region.
+..\test\STM32F103C8Tx_FLASH.ld(38): error: L6292E: Ignoring unknown attribute 'Reset_Handler' specified for region ENTRY.
+..\test\STM32F103C8Tx_FLASH.ld(38): error: L6228E: Expected '{', found ')...'.
+..\test\STM32F103C8Tx_FLASH.ld: Error: L6372E: Image needs at least one load region.
 Not enough information to list image symbols.
 Not enough information to list load addresses in the image map.
 Finished: 2 information, 0 warning and 6 error messages.
-".\Objects\Lab05_Trafficlight.axf" - 6 Error(s), 8 Warning(s).
+".\Objects\Lab05_Trafficlight.axf" - 6 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
 
 Package Vendor: Keil
                 https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
                 Keil::STM32F1xx_DFP@2.4.1
                 STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
 
 <h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
   D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
 
 <h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
 Target not created.
 Build Time Elapsed:  00:00:01
 </pre>
