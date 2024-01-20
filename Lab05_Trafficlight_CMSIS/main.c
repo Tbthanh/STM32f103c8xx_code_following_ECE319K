@@ -74,7 +74,7 @@ struct State
 // Blink of walk need to look into more!!
 // FSM of states
 typedef const struct State STyp;
-static const STyp FSM[10]={
+const STyp FSM[10]={
 	// jSo : just South
 	{0x0C0,GreenTime,{wSo,wSo,wSo,wSo,jSo,wSo,wSo,wSo}},
 	// wSo : wait South
@@ -128,7 +128,7 @@ int main(void)
 	RCC->APB2ENR |= 0x0C;
 
 	// Give time to stabilize the clock
-	while(0 == ((RCC->APB2ENR) & 0x0C)){}
+	while(!((RCC->APB2ENR) & 0x0C));
 
 	// Initialize GPIOs
 	portA_Init();

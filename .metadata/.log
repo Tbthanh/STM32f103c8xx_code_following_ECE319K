@@ -5917,3 +5917,953 @@ java.lang.Exception: The project description file (.project) for 'Lab5_Traficlig
 
 !ENTRY org.eclipse.core.jobs 2 2 2024-01-17 18:23:39.609
 !MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39
+!SESSION 2024-01-19 23:56:41.199 -----------------------------------------------
+eclipse.buildId=Version 1.13.2
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-01-19 23:56:54.052
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-01-19 23:56:54.074
+!MESSAGE Log4j2 initialized with config file D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\.metadata\.log4j2.xml
+
+!ENTRY org.eclipse.core.resources 4 567 2024-01-19 23:57:01.536
+!MESSAGE The project description file (.project) for 'Lab5_Traficlight' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'Lab5_Traficlight' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:894)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:769)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1067)
+	at org.eclipse.ui.actions.OpenResourceAction$1.doOpenWithReferences(OpenResourceAction.java:233)
+	at org.eclipse.ui.actions.OpenResourceAction$1.runInWorkspace(OpenResourceAction.java:279)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 4 567 2024-01-19 23:57:02.724
+!MESSAGE The project description file (.project) for 'Lab5_Traficlight' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+!STACK 0
+java.lang.Exception: The project description file (.project) for 'Lab5_Traficlight' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:908)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:894)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:769)
+	at org.eclipse.core.internal.resources.Project.open(Project.java:1067)
+	at org.eclipse.ui.actions.OpenResourceAction$1.doOpenWithReferences(OpenResourceAction.java:233)
+	at org.eclipse.ui.actions.OpenResourceAction$1.runInWorkspace(OpenResourceAction.java:279)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:43)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-01-19 23:57:08.773
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-01-19 23:59:14.777
+!MESSAGE Indexed 'I_f_up' (3 sources, 53 headers) in 5.08 sec: 1,950 declarations; 2,831 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.042%)
+
+!ENTRY org.eclipse.help.base 2 0 2024-01-20 00:02:20.789
+!MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.cdt.doc.user_11.1.1.202303201356 [186]'. The index should be rebuilt with Lucene 9.4.2
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:05.160
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.validateExe(ImportExecutablePageOne.java:662)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$12.modifyText(ImportExecutablePageOne.java:452)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:183)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1071)
+	at org.eclipse.swt.widgets.Text.wmCommandChild(Text.java:3106)
+	at org.eclipse.swt.widgets.Control.WM_COMMAND(Control.java:4894)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4746)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:295)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4844)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2687)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(Native Method)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(OS.java:2282)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2348)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$13.widgetSelected(ImportExecutablePageOne.java:477)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:252)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:153)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:283)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:389)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:142)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:05.161
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:644)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.validateExe(ImportExecutablePageOne.java:662)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$12.modifyText(ImportExecutablePageOne.java:452)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:183)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1071)
+	at org.eclipse.swt.widgets.Text.wmCommandChild(Text.java:3106)
+	at org.eclipse.swt.widgets.Control.WM_COMMAND(Control.java:4894)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4746)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:295)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4844)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2687)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(Native Method)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(OS.java:2282)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2348)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$13.widgetSelected(ImportExecutablePageOne.java:477)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:252)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:153)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:283)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:389)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:142)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:05.164
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:644)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.validateExe(ImportExecutablePageOne.java:662)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$12.modifyText(ImportExecutablePageOne.java:452)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:183)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1090)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1071)
+	at org.eclipse.swt.widgets.Text.wmCommandChild(Text.java:3106)
+	at org.eclipse.swt.widgets.Control.WM_COMMAND(Control.java:4894)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4746)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.CallWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Text.callWindowProc(Text.java:295)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4844)
+	at org.eclipse.swt.widgets.Text.windowProc(Text.java:2687)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5022)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(Native Method)
+	at org.eclipse.swt.internal.win32.OS.SetWindowText(OS.java:2282)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2348)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$13.widgetSelected(ImportExecutablePageOne.java:477)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:252)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.jface.window.Window.runEventLoop(Window.java:823)
+	at org.eclipse.jface.window.Window.open(Window.java:799)
+	at org.eclipse.ui.internal.handlers.WizardHandler$Import.executeHandler(WizardHandler.java:153)
+	at org.eclipse.ui.internal.handlers.WizardHandler.execute(WizardHandler.java:283)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:317)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:251)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:485)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.ui.internal.handlers.LegacyHandlerService.executeCommand(LegacyHandlerService.java:389)
+	at org.eclipse.ui.internal.actions.CommandAction.runWithEvent(CommandAction.java:142)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:580)
+	at org.eclipse.jface.action.ActionContributionItem.lambda$4(ActionContributionItem.java:414)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4256)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1066)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4054)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3642)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1155)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1046)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:643)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:550)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:171)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:402)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.491
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.493
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.495
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.497
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.500
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.502
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.505
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.508
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.510
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.512
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.515
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.518
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.521
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.523
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.526
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.528
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.530
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.532
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.533
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.535
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.537
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.539
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.541
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.561
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.573
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.575
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.585
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.587
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.601
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.603
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.606
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:168)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.608
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.653
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.655
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.cdt.core 4 0 2024-01-20 00:03:12.658
+!MESSAGE Error: Not ELF format
+!STACK 0
+java.io.IOException: Not ELF format
+	at org.eclipse.cdt.utils.elf.Elf$ELFhdr.<init>(Elf.java:197)
+	at org.eclipse.cdt.utils.elf.Elf.commonSetup(Elf.java:690)
+	at org.eclipse.cdt.utils.elf.Elf.<init>(Elf.java:709)
+	at org.eclipse.cdt.utils.elf.Elf.getAttributes(Elf.java:957)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getAttribute(ElfParser.java:137)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:55)
+	at org.eclipse.cdt.utils.elf.parser.ElfParser.getBinary(ElfParser.java:41)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:611)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.isBinary(ImportExecutablePageOne.java:635)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne.collectExecutableFiles(ImportExecutablePageOne.java:169)
+	at org.eclipse.cdt.debug.ui.importexecutable.ImportExecutablePageOne$16.run(ImportExecutablePageOne.java:590)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
