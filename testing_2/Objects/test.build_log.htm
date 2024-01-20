@@ -49,7 +49,7 @@ RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-
       |         ^~~~~~~~~~~~~
 5 warnings generated.
 compiling system_stm32f10x.c...
-main.c(2): warning: In file included from...
+main.c(44): warning: In file included from...
 D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
       |                                                ^
@@ -59,23 +59,32 @@ D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): 
 D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    26 |   *           - Macros to access peripheral<92>s registers hardware
       |                                            ^
-main.c(88): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-   88 |         volatile uint32_t input = 0x00;
-      |                           ^
-main.c(88): warning: unused variable 'input' [-Wunused-variable]
-   88 |         volatile uint32_t input = 0x00;
-      |                           ^~~~~
-main.c(124): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  124 |         int8_t repeatTime = 5;
+main.c(136): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  136 |         volatile uint8_t state = (uint8_t)rAl;
+      |                          ^
+main.c(193): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  193 |         int8_t repeatTime = 5;
       |                ^
-main.c(49): warning: unused variable 'FSM' [-Wunused-const-variable]
-   49 | static const STyp FSM[10]={
-      |                   ^~~
-7 warnings generated.
+main.c(144): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  144 |                 GPIOB->ODR = FSM[state].Output;
+      |                              ^~~
+main.c(150): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  150 |                         flashing(FSM[state].Time);
+      |                                  ^~~
+main.c(155): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  155 |                         Delay(FSM[state].Time);
+      |                               ^~~
+main.c(163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  163 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~~~~~~~~~~~~~
+main.c(163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  163 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~
+10 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=1224 RO-data=252 RW-data=0 ZI-data=1640  
-".\Objects\test.axf" - 0 Error(s), 12 Warning(s).
+Program Size: Code=1420 RO-data=412 RW-data=0 ZI-data=1640  
+".\Objects\test.axf" - 0 Error(s), 15 Warning(s).
 
 <h2>Software Packages used:</h2>
 
