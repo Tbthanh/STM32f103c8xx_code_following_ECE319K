@@ -43,29 +43,45 @@ Interupt:
 		Enable: systick sẽ được enable bởi chính 
 	-Phần interupt chính sẽ trọng tâm vào interupt cho GPIO A cho chân:
 		All peripheral (include GPIO) interupt: IRQn >= 0
-		Enable interupt:
+		1.Enable interupt:
 			NVIC_ISERx: register for enabling
 			NVIC_ICERx: register for disabling 
-		Method to enable:
-			Method 1:
-				Using NVIC_EnableIRQ(IRQn) and NVIC_DisableIRQ(IRQn)
-			Method 2:
-				Using the register and flip the coresponding bits:
-					Enable:
-						NVIC->ISER[IRQn >> 5] = 1 << (IRQn & 0x1F);
+			Method to enable:
+				Method 1:
+					Using NVIC_EnableIRQ(IRQn) and NVIC_DisableIRQ(IRQn)
+				Method 2:
+					Using the register and flip the coresponding bits:
+						Enable:
+							NVIC->ISER[IRQn >> 5] = 1 << (IRQn & 0x1F);
 
-						/* using better solution is to shift bit and bitwise (the other is to / and %)
-						Here's a breakdown of each part:
+							/* using better solution is to shift bit and bitwise (the other is to / and %)
+							Here's a breakdown of each part:
 
-						NVIC: This typically represents the Nested Vectored Interrupt Controller, which is a hardware component in ARM Cortex-M microcontrollers responsible for managing interrupts.
+							NVIC: This typically represents the Nested Vectored Interrupt Controller, which is a hardware component in ARM Cortex-M microcontrollers responsible for managing interrupts.
 
-						ISER[IRQn >> 5]: This refers to the Interrupt Set Enable Register (ISER) for a specific interrupt. IRQn is an interrupt number, and >> 5 is a bitwise right shift by 5. In ARM Cortex-M architectures, the ISER is an array of 32-bit registers, and each register can enable/disable up to 32 interrupts. The >> 5 operation is equivalent to dividing IRQn by 32 to find the index of the corresponding ISER register.
-						1 << (IRQn & 0x1F): This part sets a specific bit within the selected ISER register. IRQn & 0x1F is a bitwise AND operation with 0x1F (31 in decimal), which ensures that the result is in the range of 0 to 31 (inclusive). The 1 << (IRQn & 0x1F) then shifts the value 1 to the left by the result of the AND operation, effectively setting the corresponding bit in the ISER register.
-						In summary, this line of code enables a specific interrupt (IRQn) by setting the corresponding bit in the appropriate ISER register within the NVIC. This is a common operation in embedded systems programming when dealing with interrupts on ARM Cortex-M microcontrollers.*/
-					
-					Disable:
-						NIVC->ICER[IRQn >> 5] = 1 << (IRQn & 0x1F); 
+							ISER[IRQn >> 5]: This refers to the Interrupt Set Enable Register (ISER) for a specific interrupt. IRQn is an interrupt number, and >> 5 is a bitwise right shift by 5. In ARM Cortex-M architectures, the ISER is an array of 32-bit registers, and each register can enable/disable up to 32 interrupts. The >> 5 operation is equivalent to dividing IRQn by 32 to find the index of the corresponding ISER register.
+							1 << (IRQn & 0x1F): This part sets a specific bit within the selected ISER register. IRQn & 0x1F is a bitwise AND operation with 0x1F (31 in decimal), which ensures that the result is in the range of 0 to 31 (inclusive). The 1 << (IRQn & 0x1F) then shifts the value 1 to the left by the result of the AND operation, effectively setting the corresponding bit in the ISER register.
+							In summary, this line of code enables a specific interrupt (IRQn) by setting the corresponding bit in the appropriate ISER register within the NVIC. This is a common operation in embedded systems programming when dealing with interrupts on ARM Cortex-M microcontrollers.*/
+						
+						Disable:
+							NIVC->ICER[IRQn >> 5] = 1 << (IRQn & 0x1F); 
+		2.Interupt piority:
+			config by Interupt Piority Register (NVIC_IPRx)
+				NVIC->IP[số ứng với piority của interupt] = (6 << 4) & 0xff;
 
+			EXTIx và PAx sẽ như nhau, kiểu PA0 sẽ do EXTI0;
+			Xem bảng Interupt Vector Table để biết Interupt Number và Memory Adress of IDR.
+			Configurable External Interupt (FTSR, RTSR, SWIER)
+
+			'code:'
+			// in main code:
+			// after enable GPIO clock and GPIOA_Init();
+
+			// Enable and config interupt for PA0
+			// NVIC_EnableIRQ(EXTI0_IRQn); // Enable interupt
+			NVIC->ISER[];
+			// Connect External Line to the GPI
+			RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;
 
 
 OLED:

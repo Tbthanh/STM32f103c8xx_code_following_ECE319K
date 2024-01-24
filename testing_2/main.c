@@ -123,6 +123,7 @@ static const STyp FSM[10]={
 	{0x00000092,RedTime,{rAl,jWa,jWe,jWe,jSo,jSo,jSo,jSo}}
 };
 
+/*************** MAIN ***************/
 int main(void)
 {
 	// initialize 48 MHz system clock
@@ -175,6 +176,7 @@ int main(void)
 		state = (uint8_t)(FSM[state].Next[input]);
 	}
 }
+/********* END OF MAIN ***************/
 
 void portB_Init(void)
 {
@@ -333,10 +335,11 @@ void EXTI2_IRQHandler(void)
 void Interupt_Init(void)
 {
 	/* Interupt config for PA0, PA1 and PA2
-	 *ref: 
-			1) https://stackoverflow.com/questions/67140959/stm32f103-blue-pill-interrupts-from-scratch
-			2) https://youtu.be/uKwD3JuRWeA?si=OXbISvS9MOoUbTvn
-			3) https://controllerstech.com/external-interrupt-using-registers/
+	 *ref: the 1 st one is the most okay! 
+			1) https://controllerstech.com/external-interrupt-using-registers/
+			2) https://stackoverflow.com/questions/67140959/stm32f103-blue-pill-interrupts-from-scratch
+			3) https://youtu.be/uKwD3JuRWeA?si=OXbISvS9MOoUbTvn
+			
 	 *define in stm32f10x.h for IRQn
 			******  STM32 specific Interrupt Numbers ******
 			EXTI0_IRQn                  = 6,       EXTI Line0 Interrupt                                 
