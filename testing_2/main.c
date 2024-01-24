@@ -62,6 +62,9 @@ volatile static uint32_t TimeDelay;
 // function to set the sysclock to 48Mhz
 void PLLInit(void);
 
+// Interupt init for PA[0:2]
+void Interupt_Init(void);
+
 // external interupt handler function for PA0,1,2:
 void EXTI0_IRQHandler(void);
 void EXTI1_IRQHandler(void);
@@ -138,56 +141,8 @@ int main(void)
 	portA_Init();
 	portB_Init();
 	
-	
-	/* Interupt config for PA0, PA1 and PA2
-	 *ref: 
-			1) https://stackoverflow.com/questions/67140959/stm32f103-blue-pill-interrupts-from-scratch
-			2) https://youtu.be/uKwD3JuRWeA?si=OXbISvS9MOoUbTvn
-			3) https://controllerstech.com/external-interrupt-using-registers/
-	 *define in stm32f10x.h for IRQn
-			******  STM32 specific Interrupt Numbers ******
-			EXTI0_IRQn                  = 6,       EXTI Line0 Interrupt                                 
-			EXTI1_IRQn                  = 7,       EXTI Line1 Interrupt                                 
-			EXTI2_IRQn                  = 8,       EXTI Line2 Interrupt
-	*/
-	// Enable AFIO (SYSCFG in stm32F4) to use interupt
-	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;			// (1 << 0)
-	
-	// AFIO_EXTICR1 for pin 0 - 2
-	// RM008 9.4.3 External interrupt configuration register 1
-	AFIO->EXTICR[0] &= 0xFFFFFFF0; 	// EXTIx[3:0] set to 0000:PA[x] pin
-	AFIO->EXTICR[0] &= 0xFFFFFF0F;
-	AFIO->EXTICR[0] &= 0xFFFFF0FF;       			
-	
-	// Set bit
-	// rm0008 10.3.1 Interrupt mask register
-	EXTI->IMR 	|= 0x00000007;				// unmask interrupt to enable interupt
-	// rm0008 10.3.2 Event mask register
-	// EXTI->EMR 	|= 0x00000007;				// unmask event = enable some how
-	// rm0008 10.3.3 Rising trigger selection register
-	EXTI->RTSR 	|= 0x00000007;				// set rising edge
-	// rm0008 10.3.4 Falling trigger selection register
-	EXTI->FTSR	|= 0x00000007;				// set falling edge
-	
-	// Set interupt piority
-	//NVIC_SetPriority(EXTI0_IRQn, 1); // cmsis funct def in core_cm3.h ln1632 
-	// PM0056 4.3.7 Interrupt priority registers
-	NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-	NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-	NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-	// __NVIC_PRIO_BITS define in stm32f10x.h ln168
-	/* Basicly, the code above is to set the interupt piority 1 (pretty high) to PA[0:2]
-		 The reason we have to offset left 4U is becase:
-			 "The processor implements only bits[7:4] of each field, 
-			 bits[3:0] read as zero and ignore writes"*/
-	
-	// Enable Interupt for PA[0:2]
-	//NVIC_EnableIRQ(EXTI0_IRQn); // Set interupt using cmsis
-	NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
-	NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
-	NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
-	/* End of interupt config */
-	
+	// Interupt for PA0, PA1 and PA2
+	Interupt_Init();
 	
 	// Initial state: red All
 	volatile uint8_t state = (uint8_t)rAl;
@@ -373,4 +328,58 @@ void EXTI2_IRQHandler(void)
 		/* Clear the EXTI2 pending bit */
 		EXTI->PR |= 0x00000004;
 	}
+}
+
+void Interupt_Init(void)
+{
+	/* Interupt config for PA0, PA1 and PA2
+	 *ref: 
+			1) https://stackoverflow.com/questions/67140959/stm32f103-blue-pill-interrupts-from-scratch
+			2) https://youtu.be/uKwD3JuRWeA?si=OXbISvS9MOoUbTvn
+			3) https://controllerstech.com/external-interrupt-using-registers/
+	 *define in stm32f10x.h for IRQn
+			******  STM32 specific Interrupt Numbers ******
+			EXTI0_IRQn                  = 6,       EXTI Line0 Interrupt                                 
+			EXTI1_IRQn                  = 7,       EXTI Line1 Interrupt                                 
+			EXTI2_IRQn                  = 8,       EXTI Line2 Interrupt
+	*/
+	// Enable AFIO (SYSCFG in stm32F4) to use interupt
+	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;			// (1 << 0)
+
+	// AFIO_EXTICR1 for pin 0 - 2
+	// RM008 9.4.3 External interrupt configuration register 1
+	AFIO->EXTICR[0] &= 0xFFFFFFF0; 	// EXTIx[3:0] set to 0000:PA[x] pin
+	AFIO->EXTICR[0] &= 0xFFFFFF0F;
+	AFIO->EXTICR[0] &= 0xFFFFF0FF;       			
+
+	// Set bit
+	// rm0008 10.3.1 Interrupt mask register
+	EXTI->IMR 	|= 0x00000007;				// unmask interrupt to enable interupt
+	// rm0008 10.3.2 Event mask register
+	// EXTI->EMR 	|= 0x00000007;				// unmask event = enable some how
+	// rm0008 10.3.3 Rising trigger selection register
+	EXTI->RTSR 	|= 0x00000007;				// set rising edge
+	// rm0008 10.3.4 Falling trigger selection register
+	EXTI->FTSR	|= 0x00000007;				// set falling edge
+
+	// Set interupt piority
+	//NVIC_SetPriority(EXTI0_IRQn, 1); // cmsis funct def in core_cm3.h ln1632 
+	// PM0056 4.3.7 Interrupt priority registers
+	NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+	NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+	NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+	// __NVIC_PRIO_BITS define in stm32f10x.h ln168
+	/* Basicly, the code above is to set the interupt piority 1 (pretty high) to PA[0:2]
+		 The reason we have to offset left 4U is becase:
+			 "The processor implements only bits[7:4] of each field, 
+			 bits[3:0] read as zero and ignore writes"*/
+
+	// Enable Interupt for PA[0:2]
+	//NVIC_EnableIRQ(EXTI0_IRQn); // Set interupt using cmsis
+	// PM0056 4.3.2 Interrupt set-enable registers
+	NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
+	NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
+	NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+	// 
+	/* End of interupt config */
 }
