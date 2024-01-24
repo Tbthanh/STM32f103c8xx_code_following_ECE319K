@@ -30,9 +30,9 @@
  * 	B4: R South light
  * 	B5: Y South light
  * 	B6: G South light
- * 	B7: R South light
- * 	B8: Y South light
- * 	B9: G South light
+ * 	B7: R West light
+ * 	B8: Y West light
+ * 	B9: G West light
  *
  *For more info, please visit: https://github.com/Tbthanh/STM32f103c8xx_code_following_ECE319K
  *FSM and the excel sheet can be found: STM32f103c8xx_code_following_ECE319K/lab05_trafic_light/00_Others/
@@ -61,6 +61,12 @@ volatile static uint32_t TimeDelay;
 
 // function to set the sysclock to 48Mhz
 void PLLInit(void);
+
+// external interupt handler function for PA0,1,2:
+void EXTI0_IRQHandler(void);
+void EXTI1_IRQHandler(void);
+void EXTI2_IRQHandler(void);
+static	volatile uint8_t input = 0x00; // Input (set using interupt)
 
 // states
 #define jSo		0
@@ -132,11 +138,46 @@ int main(void)
 	portA_Init();
 	portB_Init();
 	
+	/* Interupt for PA0, PA1 and PA2
+	 *ref: 
+			1) https://stackoverflow.com/questions/67140959/stm32f103-blue-pill-interrupts-from-scratch
+			2) https://youtu.be/uKwD3JuRWeA?si=OXbISvS9MOoUbTvn
+	 *define in stm32f10x.h for IRQn
+			******  STM32 specific Interrupt Numbers ******
+			EXTI0_IRQn                  = 6,       EXTI Line0 Interrupt                                 
+			EXTI1_IRQn                  = 7,       EXTI Line1 Interrupt                                 
+			EXTI2_IRQn                  = 8,       EXTI Line2 Interrupt
+	*/
+	// Enable AFIO to use interupt
+	// AFIO_EXTICR1 for pin 0 - 2
+	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
+	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI0; // set pin to use
+	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI1;
+	AFIO->EXTICR[0] |= AFIO_EXTICR1_EXTI2;
+	// clear EXTI IMR, EMR and RTSR
+	EXTI->IMR 	&= 0xFFFFFFF8;            
+	EXTI->EMR 	&= 0xFFFFFFF8;           	
+	EXTI->RTSR 	&= 0xFFFFFFF8;        			
+	// Set bit
+	// rm0008 10.3.1 Interrupt mask register
+	EXTI->IMR 	|= 0x00000007;				// unmask interrupt to enable interupt
+	// rm0008 10.3.2 Event mask register
+	EXTI->EMR 	|= 0x00000007;				// unmask event = enable some how
+	// rm0008 10.3.3 Rising trigger selection register
+	EXTI->RTSR 	|= 0x00000007;				// set rising edge
+	// rm0008 10.3.4 Falling trigger selection register
+	EXTI->FTSR	|= 0x00000007;				// set falling edge
+	// Enable Interupt for PA0,1,2:
+	//NVIC_EnableIRQ(EXTI0_IRQn); // Set interupt using cmsis
+	NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
+	NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
+	NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+	
 	// Initial state: red All
 	volatile uint8_t state = (uint8_t)rAl;
 	
-	// Input
-	volatile uint32_t input = 0x00000000;
+	// Input (for non interupt)
+	// volatile uint32_t input = 0x00000000;
 		
 	for(;;)
 	{
@@ -155,8 +196,8 @@ int main(void)
 			Delay(FSM[state].Time);
 		}
 
-		// get new input
-		input = (GPIOA->IDR& 0x07);
+		// get new input (when not using Interupt)
+		//input = (GPIOA->IDR& 0x07);
 		//input = (*GPIO_A_IDR & 0x07);
 
 		// go to next state
@@ -183,7 +224,7 @@ void portA_Init(void)
 	// CRL for pin A 0-2
 	GPIOA->CRL &= 0xFFFFF000;
 	GPIOA->CRL |= 0x00000888;
-	// Pull up pin A 0-2
+	// Pull down pin A 0-2
 	GPIOA->ODR &= 0xFFFFFFF8;
 }
 
@@ -221,6 +262,7 @@ void SysTick_Init(uint32_t ticks)
 	SysTick->CTRL = 0x00000000;	// SysTick_CTRL_DISABLE;
 	SysTick->LOAD = ticks - 1;
 	// set interupt piority of SysTick to least urgency
+	// Using NVIC_setPiority for convinience, to focus on peripheral interupt
 	NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL);
 	SysTick->VAL = 0;	// reset the value
 	// select processor clock
@@ -263,4 +305,56 @@ void PLLInit(void)
 	RCC->CFGR  |= RCC_CFGR_SW_PLL;	// 0X02
 	while (!(RCC->CFGR & RCC_CFGR_SWS_PLL))
 		;		// clock is ready 48Mhz
+}
+
+void EXTI0_IRQHandler(void)
+{
+	if ((EXTI->PR & 0x00000001) !=0)	
+	{
+		if ((GPIOA->IDR& 0x00000001) != 0) // rising?
+		{
+			input &= 0xFE;	// clear bit 0
+			input |= 0x01;	// set bit 0
+		}
+		else	// falling?
+		{
+			input &= 0xFE;	// clear bit 0
+		}
+		/* Clear the EXTI0 pending bit */
+		EXTI->PR |= 0x00000001;
+	}
+}
+void EXTI1_IRQHandler(void)
+{
+	if ((EXTI->PR & 0x00000002) !=0)	
+	{
+		if ((GPIOA->IDR& 0x00000002) != 0) // rising?
+		{
+			input &= 0xFD;	// clear bit 1
+			input |= 0x02;	// set bit 1
+		}
+		else	// falling?
+		{
+			input &= 0xFD;	// clear bit 1
+		}
+		/* Clear the EXTI1 pending bit */
+		EXTI->PR |= 0x00000002;
+	}
+}
+void EXTI2_IRQHandler(void)
+{
+	if ((EXTI->PR & 0x00000004) !=0)	
+	{
+		if ((GPIOA->IDR& 0x00000004) != 0) // rising?
+		{
+			input &= 0xFB;	// clear bit 2
+			input |= 0x04;	// set bit 2
+		}
+		else	// falling?
+		{
+			input &= 0xFB6;	// clear bit 2
+		}
+		/* Clear the EXTI2 pending bit */
+		EXTI->PR |= 0x00000004;
+	}
 }
