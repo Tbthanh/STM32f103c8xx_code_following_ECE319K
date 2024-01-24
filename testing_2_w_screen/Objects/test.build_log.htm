@@ -1,0 +1,745 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ba Thanh Tran, HUST, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\testing_2_w_screen\test.uvprojx
+Project File Date:  01/24/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(23): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(23): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/misc.c(131): error: no member named 'IP' in 'NVIC_Type'
+  131 |     NVIC->IP[NVIC_InitStruct->NVIC_IRQChannel] = tmppriority;
+      |     ~~~~  ^
+6 warnings and 1 error generated.
+compiling misc.c...
+assembling startup_stm32f10x_md.s...
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/fonts.h(43): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/fonts.h(43): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/fonts.h(43): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(25): warning: no previous extern declaration for non-static variable 'Font7x10' [-Wmissing-variable-declarations]
+   25 | const uint16_t Font7x10 [] = {
+      |                ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(25): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   25 | const uint16_t Font7x10 [] = {
+      |       ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(123): warning: no previous extern declaration for non-static variable 'Font11x18' [-Wmissing-variable-declarations]
+  123 | const uint16_t Font11x18 [] = {
+      |                ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(123): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  123 | const uint16_t Font11x18 [] = {
+      |       ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(221): warning: no previous extern declaration for non-static variable 'Font16x26' [-Wmissing-variable-declarations]
+  221 | const uint16_t Font16x26 [] = {
+      |                ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(221): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  221 | const uint16_t Font16x26 [] = {
+      |       ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/fonts.h(58): warning: padding struct 'FontDef_t' with 2 bytes to align 'data' [-Wpadded]
+   58 |         const uint16_t *data; /*!< Pointer to data font data array */
+      |                         ^
+../stm32libs-master/stm32f10x/ssd1306/fonts.c(341): warning: implicit conversion loses integer precision: 'unsigned int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  341 |         SizeStruct->Length = Font->FontWidth * strlen(str);
+      |                            ~ ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+14 warnings generated.
+compiling fonts.c...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(26): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(26): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(26): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(37): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   37 | void ssd1306_I2C_Init();
+      |                      ^
+      |                       void
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(34): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   34 | void ssd1306_I2C_Init() {
+      |                      ^
+      |                       void
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(27): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_i2c.h(49): warning: padding size of 'I2C_InitTypeDef' with 2 bytes to alignment boundary [-Wpadded]
+   49 | typedef struct
+      |         ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(54): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   54 |     // <CD><F3> <E8> <E2><EA><EB><FE><F7><E0><E5><EC>, <F1><EE><E1><F1><F2><E2><E5><ED><ED><EE>, <EC><EE><E4><F3><EB><FC> I2C1
+      |        ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(54): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   54 |     // <CD><F3> <E8> <E2><EA><EB><FE><F7><E0><E5><EC>, <F1><EE><E1><F1><F2><E2><E5><ED><ED><EE>, <EC><EE><E4><F3><EB><FC> I2C1
+      |                 ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(54): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   54 |     // <CD><F3> <E8> <E2><EA><EB><FE><F7><E0><E5><EC>, <F1><EE><E1><F1><F2><E2><E5><ED><ED><EE>, <EC><EE><E4><F3><EB><FC> I2C1
+      |                      ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(54): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   54 |     // <CD><F3> <E8> <E2><EA><EB><FE><F7><E0><E5><EC>, <F1><EE><E1><F1><F2><E2><E5><ED><ED><EE>, <EC><EE><E4><F3><EB><FC> I2C1
+      |                                                        ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(54): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   54 |     // <CD><F3> <E8> <E2><EA><EB><FE><F7><E0><E5><EC>, <F1><EE><E1><F1><F2><E2><E5><ED><ED><EE>, <EC><EE><E4><F3><EB><FC> I2C1
+      |                                                                                                  ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(34): warning: no previous prototype for function 'ssd1306_I2C_Init' [-Wmissing-prototypes]
+   34 | void ssd1306_I2C_Init() {
+      |      ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(37): note: this declaration is not a prototype; add 'void' to make it a prototype for a zero-parameter function
+   37 | void ssd1306_I2C_Init();
+      |      ^                
+      |                       void
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(161): warning: no previous prototype for function 'ssd1306_I2C_IsDeviceConnected' [-Wmissing-prototypes]
+  161 | uint8_t ssd1306_I2C_IsDeviceConnected(I2C_TypeDef* I2Cx, uint8_t address) {
+      |         ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(161): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  161 | uint8_t ssd1306_I2C_IsDeviceConnected(I2C_TypeDef* I2Cx, uint8_t address) {
+      | ^
+      | static 
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.c(67): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   67 |                 ssd1306_I2C_WriteData(I2Cx, data[i]);
+      |                                             ^~~~
+20 warnings generated.
+compiling ssd1306_i2c.c...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+11 warnings generated.
+compiling system_stm32f10x.c...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.h(48): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.h(48): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.h(48): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.h(49): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306_i2c.h(37): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   37 | void ssd1306_I2C_Init();
+      |                      ^
+      |                       void
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(52): error: call to undeclared function 'ssd1306_I2C_IsDeviceConnected'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   52 |         if (!ssd1306_I2C_IsDeviceConnected(SSD1306_I2C, SSD1306_I2C_ADDR)) {
+      |              ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(58): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+   58 |         uint32_t p = 2500;
+      |                  ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(184): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  184 |                                 SSD1306_DrawPixel(SSD1306.CurrentX + j, (SSD1306.CurrentY + i), (SSD1306_COLOR_t) color);
+      |                                 ~~~~~~~~~~~~~~~~~                        ~~~~~~~~~~~~~~~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(184): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  184 |                                 SSD1306_DrawPixel(SSD1306.CurrentX + j, (SSD1306.CurrentY + i), (SSD1306_COLOR_t) color);
+      |                                 ~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(186): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  186 |                                 SSD1306_DrawPixel(SSD1306.CurrentX + j, (SSD1306.CurrentY + i), (SSD1306_COLOR_t)!color);
+      |                                 ~~~~~~~~~~~~~~~~~                        ~~~~~~~~~~~~~~~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(186): warning: implicit conversion loses integer precision: 'uint32_t' (aka 'unsigned int') to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  186 |                                 SSD1306_DrawPixel(SSD1306.CurrentX + j, (SSD1306.CurrentY + i), (SSD1306_COLOR_t)!color);
+      |                                 ~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~~~~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(23): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.h(50): warning: In file included from...
+../stm32libs-master/stm32f10x/ssd1306/fonts.h(58): warning: padding struct 'FontDef_t' with 2 bytes to align 'data' [-Wpadded]
+   58 |         const uint16_t *data; /*!< Pointer to data font data array */
+      |                         ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(241): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  241 |                         tmp = y1;
+      |                             ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(243): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  243 |                         y0 = tmp;
+      |                            ~ ^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(247): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  247 |                         tmp = x1;
+      |                             ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(249): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  249 |                         x0 = tmp;
+      |                            ~ ^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(253): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  253 |                 for (i = y0; i <= y1; i++) {
+      |                        ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(254): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  254 |                         SSD1306_DrawPixel(x0, i, c);
+      |                         ~~~~~~~~~~~~~~~~~     ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(263): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  263 |                         tmp = y1;
+      |                             ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(265): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  265 |                         y0 = tmp;
+      |                            ~ ^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(269): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  269 |                         tmp = x1;
+      |                             ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(271): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  271 |                         x0 = tmp;
+      |                            ~ ^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(275): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  275 |                 for (i = x0; i <= x1; i++) {
+      |                        ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(276): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  276 |                         SSD1306_DrawPixel(i, y0, c);
+      |                         ~~~~~~~~~~~~~~~~~ ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(367): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  367 |         x = x1;
+      |           ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(368): warning: implicit conversion changes signedness: 'uint16_t' (aka 'unsigned short') to 'int16_t' (aka 'short') [-Wsign-conversion]
+  368 |         y = y1;
+      |           ~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(403): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  403 |                 SSD1306_DrawLine(x, y, x3, y3, color);
+      |                 ~~~~~~~~~~~~~~~~    ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(403): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  403 |                 SSD1306_DrawLine(x, y, x3, y3, color);
+      |                 ~~~~~~~~~~~~~~~~ ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(360): warning: no previous prototype for function 'SSD1306_DrawFilledTriangle' [-Wmissing-prototypes]
+  360 | void SSD1306_DrawFilledTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, SSD1306_COLOR_t color) {
+      |      ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(360): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  360 | void SSD1306_DrawFilledTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, SSD1306_COLOR_t color) {
+      | ^
+      | static 
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(423): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  423 |     SSD1306_DrawPixel(x0, y0 + r, c);
+      |     ~~~~~~~~~~~~~~~~~     ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(423): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  423 |     SSD1306_DrawPixel(x0, y0 + r, c);
+      |     ~~~~~~~~~~~~~~~~~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(424): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  424 |     SSD1306_DrawPixel(x0, y0 - r, c);
+      |     ~~~~~~~~~~~~~~~~~     ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(424): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  424 |     SSD1306_DrawPixel(x0, y0 - r, c);
+      |     ~~~~~~~~~~~~~~~~~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(425): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  425 |     SSD1306_DrawPixel(x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~         ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(425): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  425 |     SSD1306_DrawPixel(x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(426): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  426 |     SSD1306_DrawPixel(x0 - r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~         ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(426): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  426 |     SSD1306_DrawPixel(x0 - r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(438): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  438 |         SSD1306_DrawPixel(x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(438): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  438 |         SSD1306_DrawPixel(x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(439): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  439 |         SSD1306_DrawPixel(x0 - x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(439): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  439 |         SSD1306_DrawPixel(x0 - x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(440): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  440 |         SSD1306_DrawPixel(x0 + x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(440): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  440 |         SSD1306_DrawPixel(x0 + x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(441): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  441 |         SSD1306_DrawPixel(x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(441): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  441 |         SSD1306_DrawPixel(x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(443): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  443 |         SSD1306_DrawPixel(x0 + y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(443): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  443 |         SSD1306_DrawPixel(x0 + y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(444): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  444 |         SSD1306_DrawPixel(x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(444): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  444 |         SSD1306_DrawPixel(x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(445): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  445 |         SSD1306_DrawPixel(x0 + y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(445): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  445 |         SSD1306_DrawPixel(x0 + y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(446): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  446 |         SSD1306_DrawPixel(x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(446): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  446 |         SSD1306_DrawPixel(x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(457): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  457 |     SSD1306_DrawPixel(x0, y0 + r, c);
+      |     ~~~~~~~~~~~~~~~~~     ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(457): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  457 |     SSD1306_DrawPixel(x0, y0 + r, c);
+      |     ~~~~~~~~~~~~~~~~~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(458): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  458 |     SSD1306_DrawPixel(x0, y0 - r, c);
+      |     ~~~~~~~~~~~~~~~~~     ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(458): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  458 |     SSD1306_DrawPixel(x0, y0 - r, c);
+      |     ~~~~~~~~~~~~~~~~~ ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(459): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  459 |     SSD1306_DrawPixel(x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~         ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(459): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  459 |     SSD1306_DrawPixel(x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(460): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  460 |     SSD1306_DrawPixel(x0 - r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~         ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(460): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  460 |     SSD1306_DrawPixel(x0 - r, y0, c);
+      |     ~~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(461): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  461 |     SSD1306_DrawLine(x0 - r, y0, x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~                     ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(461): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  461 |     SSD1306_DrawLine(x0 - r, y0, x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~             ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(461): warning: implicit conversion changes signedness: 'int16_t' (aka 'short') to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  461 |     SSD1306_DrawLine(x0 - r, y0, x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~         ^~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(461): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  461 |     SSD1306_DrawLine(x0 - r, y0, x0 + r, y0, c);
+      |     ~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(473): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  473 |         SSD1306_DrawLine(x0 - x, y0 + y, x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~                         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(473): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  473 |         SSD1306_DrawLine(x0 - x, y0 + y, x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~                 ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(473): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  473 |         SSD1306_DrawLine(x0 - x, y0 + y, x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(473): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  473 |         SSD1306_DrawLine(x0 - x, y0 + y, x0 + x, y0 + y, c);
+      |         ~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(474): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  474 |         SSD1306_DrawLine(x0 + x, y0 - y, x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~                         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(474): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  474 |         SSD1306_DrawLine(x0 + x, y0 - y, x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~                 ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(474): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  474 |         SSD1306_DrawLine(x0 + x, y0 - y, x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(474): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  474 |         SSD1306_DrawLine(x0 + x, y0 - y, x0 - x, y0 - y, c);
+      |         ~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(476): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  476 |         SSD1306_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~                         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(476): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  476 |         SSD1306_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~                 ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(476): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  476 |         SSD1306_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(476): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  476 |         SSD1306_DrawLine(x0 + y, y0 + x, x0 - y, y0 + x, c);
+      |         ~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(477): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  477 |         SSD1306_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~                         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(477): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  477 |         SSD1306_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~                 ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(477): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  477 |         SSD1306_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~         ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(477): warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+  477 |         SSD1306_DrawLine(x0 + y, y0 - x, x0 - y, y0 - x, c);
+      |         ~~~~~~~~~~~~~~~~ ~~~^~~
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(481): warning: no previous prototype for function 'SSD1306_ON' [-Wmissing-prototypes]
+  481 | void SSD1306_ON(void) {
+      |      ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(481): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  481 | void SSD1306_ON(void) {
+      | ^
+      | static 
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(486): warning: no previous prototype for function 'SSD1306_OFF' [-Wmissing-prototypes]
+  486 | void SSD1306_OFF(void) {
+      |      ^
+../stm32libs-master/stm32f10x/ssd1306/ssd1306.c(486): note: declare 'static' if the function is not intended to be used outside of this translation unit
+  486 | void SSD1306_OFF(void) {
+      | ^
+      | static 
+87 warnings and 1 error generated.
+compiling ssd1306.c...
+main.c(44): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(44): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(75): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(44): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(47): warning: In file included from...
+./ssd1306\ssd1306.h(49): warning: In file included from...
+./ssd1306/ssd1306_i2c.h(37): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   37 | void ssd1306_I2C_Init();
+      |                      ^
+      |                       void
+main.c(151): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  151 |         volatile uint8_t state = (uint8_t)rAl;
+      |                          ^
+main.c(209): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  209 |         int8_t repeatTime = 5;
+      |                ^
+main.c(159): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  159 |                 GPIOB->ODR = FSM[state].Output;
+      |                              ^~~
+main.c(165): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  165 |                         flashing(FSM[state].Time);
+      |                                  ^~~
+main.c(170): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  170 |                         Delay(FSM[state].Time);
+      |                               ^~~
+main.c(178): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  178 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~~~~~~~~~~~~~
+main.c(178): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  178 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~
+main.c(373): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  373 |         NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(374): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  374 |         NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(375): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  375 |         NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(385): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  385 |         NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(386): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  386 |         NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(387): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  387 |         NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+23 warnings generated.
+compiling main.c...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(22): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(22): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\stm32f10x_rcc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(8347): warning: In file included from...
+./RTE/Device/STM32F103C8\stm32f10x_conf.h(96): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc\misc.h(31): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(1010): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1010 |   presc = APBAHBPrescTable[tmp];
+      |           ^~~~~~~~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(1016): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1016 |   presc = APBAHBPrescTable[tmp];
+      |           ^~~~~~~~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(1022): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1022 |   presc = APBAHBPrescTable[tmp];
+      |           ^~~~~~~~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c(1028): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+ 1028 |   presc = ADCPrescTable[tmp];
+      |           ^~~~~~~~~~~~~
+10 warnings generated.
+compiling stm32f10x_rcc.c...
+".\Objects\test.axf" - 2 Error(s), 171 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+   * Component: Framework Version: 3.6.0
+   * Component: RCC Version: 3.6.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+  D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+
+   * Component: Keil::Device:StdPeriph Drivers:Framework@3.6.0
+      Source file:   Device/StdPeriph_Driver/src/misc.c
+      Include file:  Device/StdPeriph_Driver/inc/misc.h
+      Include file:  Device/StdPeriph_Driver/templates/stm32f10x_it.h
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_conf.h
+      Source file:   Device/StdPeriph_Driver/templates/stm32f10x_it.c
+
+   * Component: Keil::Device:StdPeriph Drivers:RCC@3.6.0
+      Include file:  Device/StdPeriph_Driver/inc/stm32f10x_rcc.h
+      Source file:   Device/StdPeriph_Driver/src/stm32f10x_rcc.c
+Target not created.
+Build Time Elapsed:  00:00:08
+</pre>
+</body>
+</html>
