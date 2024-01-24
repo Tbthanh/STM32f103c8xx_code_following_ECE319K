@@ -59,59 +59,59 @@ D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): 
 D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
    26 |   *           - Macros to access peripheral<92>s registers hardware
       |                                            ^
-main.c(149): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  149 |         volatile uint8_t state = (uint8_t)rAl;
+main.c(156): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  156 |         volatile uint8_t state = (uint8_t)rAl;
       |                          ^
-main.c(207): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
-  207 |         int8_t repeatTime = 5;
+main.c(218): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  218 |         int8_t repeatTime = 5;
       |                ^
-main.c(157): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  157 |                 GPIOB->ODR = FSM[state].Output;
+main.c(164): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  164 |                 GPIOB->ODR = FSM[state].Output;
       |                              ^~~
-main.c(163): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  163 |                         flashing(FSM[state].Time);
+main.c(170): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  170 |                         flashing(FSM[state].Time);
       |                                  ^~~
-main.c(168): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  168 |                         Delay(FSM[state].Time);
+main.c(175): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  175 |                         Delay(FSM[state].Time);
       |                               ^~~
-main.c(176): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  176 |                 state = (uint8_t)(FSM[state].Next[input]);
+main.c(183): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  183 |                 state = (uint8_t)(FSM[state].Next[input]);
       |                                   ^~~~~~~~~~~~~~~
-main.c(176): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  176 |                 state = (uint8_t)(FSM[state].Next[input]);
+main.c(183): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  183 |                 state = (uint8_t)(FSM[state].Next[input]);
       |                                   ^~~
-main.c(370): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  370 |         NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-      |         ^~~~~~~~~
-D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
- 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
-      |                             ^
-main.c(371): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  371 |         NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-      |         ^~~~~~~~~
-D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
- 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
-      |                             ^
-main.c(372): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  372 |         NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
-      |         ^~~~~~~~~
-D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
- 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
-      |                             ^
 main.c(382): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  382 |         NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
-      |         ^~~~~~~~~~
+  382 |         NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
 D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
  1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
       |                             ^
 main.c(383): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  383 |         NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
-      |         ^~~~~~~~~~
+  383 |         NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
 D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
  1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
       |                             ^
 main.c(384): warning: unsafe buffer access [-Wunsafe-buffer-usage]
-  384 |         NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+  384 |         NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(394): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  394 |         NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(395): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  395 |         NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(396): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  396 |         NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
       |         ^~~~~~~~~~
 D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
  1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
@@ -119,7 +119,7 @@ D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note
 16 warnings generated.
 compiling main.c...
 linking...
-Program Size: Code=1860 RO-data=412 RW-data=0 ZI-data=1640  
+Program Size: Code=1880 RO-data=412 RW-data=0 ZI-data=1640  
 ".\Objects\test.axf" - 0 Error(s), 21 Warning(s).
 
 <h2>Software Packages used:</h2>
@@ -147,10 +147,10 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE@6.0.0
 
    * Component: Keil::Device:Startup@1.0.0
-      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Include file:  RTE_Driver/Config/RTE_Device.h
-      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
       Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
 Build Time Elapsed:  00:00:02
 </pre>
 </body>

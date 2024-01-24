@@ -46,6 +46,7 @@
 
 // initialize port B 4-9 and B 0-1
 void portB_Init(void);
+void portB_LED_Check(void);
 
 // initialize port A 0-2
 void portA_Init(void);
@@ -137,13 +138,19 @@ int main(void)
 
 	// Give time to stabilize the clock
 	while(!(RCC->APB2ENR & 0x0000000C));
-
+	
 	// Initialize GPIOs
 	portA_Init();
 	portB_Init();
 	
 	// Interupt for PA0, PA1 and PA2
 	Interupt_Init();
+	
+	//JTAG-DP Disabled and SW-DP Enabled
+	AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_JTAGDISABLE;
+	
+	// Test all LED
+	portB_LED_Check();
 	
 	// Initial state: red All
 	volatile uint8_t state = (uint8_t)rAl;
@@ -185,6 +192,10 @@ void portB_Init(void)
 	GPIOB->CRL |= 0x66660066;
 	// CLH for pin B 8-9
 	GPIOB->CRH |= 0x00000066;
+}
+
+void portB_LED_Check(void)
+{
 	// Cheking all the LED
 	GPIOB->ODR |= 0x000003F3;
 	Delay(3000);
