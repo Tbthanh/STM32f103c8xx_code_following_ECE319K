@@ -75,17 +75,17 @@ void PLLInit(void);
 #define rAl		9
 
 // wait time (*1ms)
-#define GreenTime	10000		//10s
-#define WaitTime	2000		//2s
-#define RedTime		1000		//1s
-#define WalkGTime	8000		//8s
+#define GreenTime	8000		// 8s
+#define WaitTime	2000		// 2s
+#define RedTime		1000		// 1s
+#define WalkGTime	5000		// 5s
 
 // state Structure
 struct State
 {
-	uint32_t Output;	// 6-bit output for port B for road light
-	uint32_t Time;		// x10 ms
-	uint8_t Next[8];	// depends on 3-bit input
+	uint32_t 	Output;	// 6-bit output for port B for road light
+	uint32_t 	Time;		// x10 ms
+	uint8_t 	Next[8];	// depends on 3-bit input
 };
 
 // Blink of walk need to look into more!!
@@ -151,7 +151,7 @@ int main(void)
 		}
 		else
 		{
-			// delay 10ms * FSM[state].Time
+			// delay 1ms * FSM[state].Time
 			Delay(FSM[state].Time);
 		}
 
@@ -173,9 +173,9 @@ void portB_Init(void)
 	GPIOB->CRH |= 0x00000066;
 	// Cheking all the LED
 	GPIOB->ODR |= 0x000003F3;
-	Delay(8000);
+	Delay(3000);
 	GPIOB->ODR &= 0xFFFFFC0C;
-	Delay(8000);
+	Delay(3000);
 }
 
 void portA_Init(void)

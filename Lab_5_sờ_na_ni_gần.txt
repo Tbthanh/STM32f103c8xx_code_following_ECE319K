@@ -28,3 +28,49 @@ SPEC, tổng quan hệ thống:
 			+
 
 Thiết kế Fát Sấp Mặt:
+	Đoã xong, quá ghê gớm.
+
+SysTick:
+	https://youtu.be/aLCUDv_fgoU?si=fMm2bMp-1QTNWgd8
+
+	systick interupt time preriod = (systick_load + 1) x clock_preriod
+
+Interupt:
+	-ref:
+		>> https://youtu.be/K0vmH2YGbOY?si=Mxo6ZwAjz_XwiJnd
+		>> page 120/156 PM0056	
+	-Về phần systick thì sẽ dùng của thư viện cmsis cho nhanh (sẽ cố config tay sau):
+		Enable: systick sẽ được enable bởi chính 
+	-Phần interupt chính sẽ trọng tâm vào interupt cho GPIO A cho chân:
+		All peripheral (include GPIO) interupt: IRQn >= 0
+		Enable interupt:
+			NVIC_ISERx: register for enabling
+			NVIC_ICERx: register for disabling 
+		Method to enable:
+			Method 1:
+				Using NVIC_EnableIRQ(IRQn) and NVIC_DisableIRQ(IRQn)
+			Method 2:
+				Using the register and flip the coresponding bits:
+					Enable:
+						NVIC->ISER[IRQn >> 5] = 1 << (IRQn & 0x1F);
+
+						/* using better solution is to shift bit and bitwise (the other is to / and %)
+						Here's a breakdown of each part:
+
+						NVIC: This typically represents the Nested Vectored Interrupt Controller, which is a hardware component in ARM Cortex-M microcontrollers responsible for managing interrupts.
+
+						ISER[IRQn >> 5]: This refers to the Interrupt Set Enable Register (ISER) for a specific interrupt. IRQn is an interrupt number, and >> 5 is a bitwise right shift by 5. In ARM Cortex-M architectures, the ISER is an array of 32-bit registers, and each register can enable/disable up to 32 interrupts. The >> 5 operation is equivalent to dividing IRQn by 32 to find the index of the corresponding ISER register.
+						1 << (IRQn & 0x1F): This part sets a specific bit within the selected ISER register. IRQn & 0x1F is a bitwise AND operation with 0x1F (31 in decimal), which ensures that the result is in the range of 0 to 31 (inclusive). The 1 << (IRQn & 0x1F) then shifts the value 1 to the left by the result of the AND operation, effectively setting the corresponding bit in the ISER register.
+						In summary, this line of code enables a specific interrupt (IRQn) by setting the corresponding bit in the appropriate ISER register within the NVIC. This is a common operation in embedded systems programming when dealing with interrupts on ARM Cortex-M microcontrollers.*/
+					
+					Disable:
+						NIVC->ICER[IRQn >> 5] = 1 << (IRQn & 0x1F); 
+
+
+
+OLED:
+	https://controllerstech.com/oled-display-using-i2c-stm32/
+	
+	I2C pin on STM32F103C8: (page 30/114 DS5319 Rev 19)
+		PB10 	I2C2_SCL/USART3_TX(9) TIM2_CH3
+		PB11 	I2C2_SDA/ USART3_RX(9)
