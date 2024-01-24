@@ -43,11 +43,10 @@
 #include <stdint.h>
 #include <stm32f10x.h>
 #include <system_stm32f10x.h>
-#include "fonts.h"
-#include "ssd1306.h"
 
 // initialize port B 4-9 and B 0-1
 void portB_Init(void);
+void portB_LED_Check(void);
 
 // initialize port A 0-2
 void portA_Init(void);
@@ -72,6 +71,8 @@ void EXTI0_IRQHandler(void);
 void EXTI1_IRQHandler(void);
 void EXTI2_IRQHandler(void);
 static	volatile uint8_t input = 0x00; // Input (set using interupt)
+
+void I2C_Init(void);
 
 // states
 #define jSo		0
@@ -139,13 +140,21 @@ int main(void)
 
 	// Give time to stabilize the clock
 	while(!(RCC->APB2ENR & 0x0000000C));
-
+	
 	// Initialize GPIOs
 	portA_Init();
 	portB_Init();
 	
 	// Interupt for PA0, PA1 and PA2
 	Interupt_Init();
+	
+	// disable Jtag to use PB4
+	// ref: https://forum.chibios.org/viewtopic.php?t=3079
+	// JTAG-DP Disabled and SW-DP Enabled
+	AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_JTAGDISABLE;
+	
+	// Test all LED
+	portB_LED_Check();
 	
 	// Initial state: red All
 	volatile uint8_t state = (uint8_t)rAl;
@@ -187,6 +196,10 @@ void portB_Init(void)
 	GPIOB->CRL |= 0x66660066;
 	// CLH for pin B 8-9
 	GPIOB->CRH |= 0x00000066;
+}
+
+void portB_LED_Check(void)
+{
 	// Cheking all the LED
 	GPIOB->ODR |= 0x000003F3;
 	Delay(3000);
@@ -387,4 +400,27 @@ void Interupt_Init(void)
 	NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
 	// 
 	/* End of interupt config */
+}
+
+void I2C_Init(void) {
+    // Enable the clock for GPIOB
+    RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+
+    // Configure PB10 (SCL) and PB11 (SDA) as alternate function open-drain
+    GPIOB->CRH &= ~(GPIO_CRH_MODE10 | GPIO_CRH_CNF10 | GPIO_CRH_MODE11 | GPIO_CRH_CNF11);
+    GPIOB->CRH |= GPIO_CRH_MODE10_1 | GPIO_CRH_MODE11_1 | GPIO_CRH_CNF10_1 | GPIO_CRH_CNF11_1;
+
+    // Enable the clock for I2C1
+    RCC->APB1ENR |= RCC_APB1ENR_I2C1EN;
+
+    // Configure I2C1
+    I2C1->CR1 = 0; // Disable I2C1 during configuration
+
+    // Configure clock control registers
+    I2C1->CR2 = SystemCoreClock / 1000000; // Assuming 1MHz, adjust based on your I2C device specifications
+    I2C1->CCR = (SystemCoreClock / (2 * 100000)) & 0xFFF; // Assuming 100kHz, adjust accordingly
+    I2C1->TRISE = SystemCoreClock / 1000000 + 1; // Adjust based on your I2C device specifications
+
+    // Enable I2C1
+    I2C1->CR1 |= I2C_CR1_PE;
 }
