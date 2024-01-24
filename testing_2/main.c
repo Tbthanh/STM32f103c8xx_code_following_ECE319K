@@ -146,7 +146,9 @@ int main(void)
 	// Interupt for PA0, PA1 and PA2
 	Interupt_Init();
 	
-	//JTAG-DP Disabled and SW-DP Enabled
+	// disable Jtag to use PB4
+	// ref: https://forum.chibios.org/viewtopic.php?t=3079
+	// JTAG-DP Disabled and SW-DP Enabled
 	AFIO->MAPR |= AFIO_MAPR_SWJ_CFG_JTAGDISABLE;
 	
 	// Test all LED
