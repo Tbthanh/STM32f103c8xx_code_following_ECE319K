@@ -63,10 +63,12 @@ volatile static uint32_t TimeDelay;
 void PLLInit(void);
 
 // external interupt handler function for PA0,1,2:
+/*
 void EXTI0_IRQHandler(void);
 void EXTI1_IRQHandler(void);
 void EXTI2_IRQHandler(void);
 static	volatile uint8_t input = 0x00; // Input (set using interupt)
+*/
 
 // states
 #define jSo		0
@@ -148,6 +150,7 @@ int main(void)
 			EXTI1_IRQn                  = 7,       EXTI Line1 Interrupt                                 
 			EXTI2_IRQn                  = 8,       EXTI Line2 Interrupt
 	*/
+	/*
 	// Enable AFIO to use interupt
 	// AFIO_EXTICR1 for pin 0 - 2
 	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
@@ -172,12 +175,13 @@ int main(void)
 	NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
 	NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
 	NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+	*/
 	
 	// Initial state: red All
 	volatile uint8_t state = (uint8_t)rAl;
 	
 	// Input (for non interupt)
-	// volatile uint32_t input = 0x00000000;
+	volatile uint32_t input = 0x00000000;
 		
 	for(;;)
 	{
@@ -197,8 +201,7 @@ int main(void)
 		}
 
 		// get new input (when not using Interupt)
-		//input = (GPIOA->IDR& 0x07);
-		//input = (*GPIO_A_IDR & 0x07);
+		input = (GPIOA->IDR& 0x07);
 
 		// go to next state
 		state = (uint8_t)(FSM[state].Next[input]);
@@ -306,7 +309,7 @@ void PLLInit(void)
 	while (!(RCC->CFGR & RCC_CFGR_SWS_PLL))
 		;		// clock is ready 48Mhz
 }
-
+/*
 void EXTI0_IRQHandler(void)
 {
 	if ((EXTI->PR & 0x00000001) !=0)	
@@ -320,7 +323,7 @@ void EXTI0_IRQHandler(void)
 		{
 			input &= 0xFE;	// clear bit 0
 		}
-		/* Clear the EXTI0 pending bit */
+		// Clear the EXTI0 pending bit
 		EXTI->PR |= 0x00000001;
 	}
 }
@@ -337,7 +340,7 @@ void EXTI1_IRQHandler(void)
 		{
 			input &= 0xFD;	// clear bit 1
 		}
-		/* Clear the EXTI1 pending bit */
+		// Clear the EXTI1 pending bit
 		EXTI->PR |= 0x00000002;
 	}
 }
@@ -352,9 +355,10 @@ void EXTI2_IRQHandler(void)
 		}
 		else	// falling?
 		{
-			input &= 0xFB;	// clear bit 2
+			input &= 0xFB6;	// clear bit 2
 		}
-		/* Clear the EXTI2 pending bit */
+		// Clear the EXTI2 pending bit
 		EXTI->PR |= 0x00000004;
 	}
 }
+*/
