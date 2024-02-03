@@ -1,0 +1,157 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ba Thanh Tran, HUST, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+D:\TAI_LIEU\ET-E9\Program\20231\Microprocessor\Lab_work\testing_2\test.uvprojx
+Project File Date:  01/20/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\IEEE\ARM_KEIL\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(64): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+main.c(44): warning: In file included from...
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(156): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  156 |         volatile uint8_t state = (uint8_t)rAl;
+      |                          ^
+main.c(218): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  218 |         int8_t repeatTime = 5;
+      |                ^
+main.c(164): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  164 |                 GPIOB->ODR = FSM[state].Output;
+      |                              ^~~
+main.c(170): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  170 |                         flashing(FSM[state].Time);
+      |                                  ^~~
+main.c(175): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  175 |                         Delay(FSM[state].Time);
+      |                               ^~~
+main.c(183): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  183 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~~~~~~~~~~~~~
+main.c(183): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  183 |                 state = (uint8_t)(FSM[state].Next[input]);
+      |                                   ^~~
+main.c(382): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  382 |         NVIC->IPR[((uint32_t)EXTI0_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(383): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  383 |         NVIC->IPR[((uint32_t)EXTI1_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(384): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  384 |         NVIC->IPR[((uint32_t)EXTI2_IRQn)] = (uint8_t)((1 << (8U - __NVIC_PRIO_BITS)) & (uint32_t)0xFFUL);
+      |         ^~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(394): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  394 |         NVIC->ISER[EXTI0_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI0_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(395): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  395 |         NVIC->ISER[EXTI1_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI1_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+main.c(396): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  396 |         NVIC->ISER[EXTI2_IRQn >> 5UL] = (uint32_t)(1UL << (EXTI2_IRQn & 0x1FUL));
+      |         ^~~~~~~~~~
+D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include\core_cm3.h(1386): note: expanded from macro 'NVIC'
+ 1386 | #define NVIC                ((NVIC_Type      *)     NVIC_BASE     )   /*!< NVIC configuration struct */
+      |                             ^
+16 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1880 RO-data=412 RW-data=0 ZI-data=1640  
+".\Objects\test.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                https://www.keil.com/pack/ARM.CMSIS.6.0.0.pack
+                ARM::CMSIS@6.0.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 6.0.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F103C8
+  ./RTE/_Target_1
+  D:/IEEE/ARM_KEIL/Packs/ARM/CMSIS/6.0.0/CMSIS/Core/Include
+  D:/IEEE/ARM_KEIL/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@6.0.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
